@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 class AuthViewController: UIViewController {
         
@@ -121,21 +120,22 @@ class AuthViewController: UIViewController {
             
             logInButton.heightAnchor.constraint(equalToConstant: 40),
             signUpButton.heightAnchor.constraint(equalToConstant: 40),
-            stacVertical.topAnchor.constraint(equalTo: viewBacgraund.topAnchor, constant: 20),
+            stacVertical.topAnchor.constraint(equalTo: viewBacgraund.topAnchor, constant: 15),
             stacVertical.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             stacVertical.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
         ])
     }
     
     @objc func logInButtonAction() {
-        let controller = UIViewController()
-        controller.view.backgroundColor = .white
+        let controller = SingUpViewController()
+        controller.isLoginMode = true
         navigationController?.pushViewController(controller, animated: true)
 
     }
     
     @objc func signUpButtonAction() {
         let controller = SingUpViewController()
+        controller.isLoginMode = false
         navigationController?.pushViewController(controller, animated: true)
     }
    

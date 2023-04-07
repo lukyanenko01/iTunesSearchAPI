@@ -85,15 +85,31 @@ class SingUpViewController: UIViewController {
         return stac
     }()
                 
-    
+    var isLoginMode = false
+    private var viewBacgraundHeightConstraint: NSLayoutConstraint?
     private let authService = AuthService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "custumBlack")
-        
         setConstraint()
         buttonAction()
+        
+        if isLoginMode {
+            configureForLogin()
+        }
+    }
+    
+    func configureForLogin() {
+        titleLbl.text = "Log In"
+        curentPasswordTextField.removeFromSuperview()
+        if let heightConstraint = viewBacgraundHeightConstraint {
+            heightConstraint.isActive = false
+            viewBacgraundHeightConstraint = viewBacgraund.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/3)
+            viewBacgraundHeightConstraint?.isActive = true
+        }
+        buttonEnter.removeTarget(self, action: #selector(enterAction), for: .touchUpInside)
+        buttonEnter.addTarget(self, action: #selector(loginAction), for: .touchUpInside)
     }
     
     
@@ -107,6 +123,7 @@ class SingUpViewController: UIViewController {
               let confirmPassword = curentPasswordTextField.text
         else {
             //TODO: Показать ошибку, если одно из полей пустое
+            //TODO: Написать проверку паролля
             return
         }
         
@@ -128,6 +145,27 @@ class SingUpViewController: UIViewController {
         registerNewUser()
     }
 
+    @objc func loginAction() {
+        guard let email = emailTextField.text, !email.isEmpty,
+              let password = passwordTextField.text, !password.isEmpty
+        else {
+            //TODO: Показать ошибку, если одно из полей пустое
+            //TODO: Написать проверку паролля
+            return
+        }
+        
+        authService.signIn(email: email, password: password) { result in
+            switch result {
+            case .success():
+                print("User signed in successfully")
+                //TODO: перейти на следующий экран
+            case .failure(let error):
+                print("Error signing in: \(error.localizedDescription)")
+                //TODO: обработать ошибку и показать алерт
+            }
+        }
+    }
+
 
     
     private func showCodeValid(varification: String) {
@@ -135,21 +173,25 @@ class SingUpViewController: UIViewController {
     }
     
     private func setConstraint() {
-        view.addSubview(viewBacgraund)
-        view.addSubview(stacVertical)
-        
-        NSLayoutConstraint.activate([
-            viewBacgraund.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            viewBacgraund.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -40),
-            viewBacgraund.widthAnchor.constraint(equalToConstant: view.bounds.width-50),
-            viewBacgraund.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/2.5),
-
-            buttonEnter.heightAnchor.constraint(equalToConstant: 40),
-            stacVertical.centerXAnchor.constraint(equalTo: viewBacgraund.centerXAnchor),
-            stacVertical.centerYAnchor.constraint(equalTo: viewBacgraund.centerYAnchor),
-            stacVertical.leadingAnchor.constraint(equalTo: viewBacgraund.leadingAnchor, constant: 20),
-            stacVertical.trailingAnchor.constraint(equalTo: viewBacgraund.trailingAnchor, constant: -20)
-        ])
-    }
+          view.addSubview(viewBacgraund)
+          view.addSubview(stacVertical)
+          
+          NSLayoutConstraint.activate([
+              viewBacgraund.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+              viewBacgraund.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -40),
+              viewBacgraund.widthAnchor.constraint(equalToConstant: view.bounds.width-50)
+          ])
+          
+          viewBacgraundHeightConstraint = viewBacgraund.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/2.5)
+          viewBacgraundHeightConstraint?.isActive = true
+          
+          NSLayoutConstraint.activate([
+              buttonEnter.heightAnchor.constraint(equalToConstant: 40),
+              stacVertical.centerXAnchor.constraint(equalTo: viewBacgraund.centerXAnchor),
+              stacVertical.centerYAnchor.constraint(equalTo: viewBacgraund.centerYAnchor),
+              stacVertical.leadingAnchor.constraint(equalTo: viewBacgraund.leadingAnchor, constant: 20),
+              stacVertical.trailingAnchor.constraint(equalTo: viewBacgraund.trailingAnchor, constant: -20)
+          ])
+      }
 }
 //TODO: UITextFieldDelegate
