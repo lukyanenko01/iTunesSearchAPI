@@ -20,6 +20,8 @@
 		F2EF70A129E061D8003B5995 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70A029E061D8003B5995 /* AuthService.swift */; };
 		F2EF70A329E06387003B5995 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70A229E06387003B5995 /* CustomNavigationController.swift */; };
 		F2EF70A529E06E58003B5995 /* SingUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70A429E06E58003B5995 /* SingUpViewController.swift */; };
+		F2EF70AA29E0830D003B5995 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70A929E0830D003B5995 /* MainTabBarController.swift */; };
+		F2EF70AD29E0865F003B5995 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70AC29E0865F003B5995 /* CatalogViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		F2EF70A029E061D8003B5995 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F2EF70A229E06387003B5995 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		F2EF70A429E06E58003B5995 /* SingUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewController.swift; sourceTree = "<group>"; };
+		F2EF70A929E0830D003B5995 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		F2EF70AC29E0865F003B5995 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +113,9 @@
 			children = (
 				F2EF709D29E0603B003B5995 /* Application */,
 				F2EF709F29E061C1003B5995 /* NetworkServices */,
-				F2EF706C29E0593E003B5995 /* AuthViewController.swift */,
-				F2EF70A429E06E58003B5995 /* SingUpViewController.swift */,
+				F2EF70A729E08103003B5995 /* AuthModule */,
+				F2EF70A829E08240003B5995 /* TabBar */,
+				F2EF70AB29E0863D003B5995 /* CatalogModule */,
 				F2EF709E29E06052003B5995 /* Resources */,
 			);
 			path = Voio;
@@ -138,6 +143,7 @@
 			children = (
 				F2EF706829E0593E003B5995 /* AppDelegate.swift */,
 				F2EF706A29E0593E003B5995 /* SceneDelegate.swift */,
+				F2EF70A229E06387003B5995 /* CustomNavigationController.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -157,9 +163,34 @@
 			isa = PBXGroup;
 			children = (
 				F2EF70A029E061D8003B5995 /* AuthService.swift */,
-				F2EF70A229E06387003B5995 /* CustomNavigationController.swift */,
 			);
 			path = NetworkServices;
+			sourceTree = "<group>";
+		};
+		F2EF70A729E08103003B5995 /* AuthModule */ = {
+			isa = PBXGroup;
+			children = (
+				F2EF706C29E0593E003B5995 /* AuthViewController.swift */,
+				F2EF70A429E06E58003B5995 /* SingUpViewController.swift */,
+			);
+			path = AuthModule;
+			sourceTree = "<group>";
+		};
+		F2EF70A829E08240003B5995 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				F2EF70A929E0830D003B5995 /* MainTabBarController.swift */,
+			);
+			name = TabBar;
+			path = NetworkServices;
+			sourceTree = "<group>";
+		};
+		F2EF70AB29E0863D003B5995 /* CatalogModule */ = {
+			isa = PBXGroup;
+			children = (
+				F2EF70AC29E0865F003B5995 /* CatalogViewController.swift */,
+			);
+			path = CatalogModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,9 +330,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2EF70AD29E0865F003B5995 /* CatalogViewController.swift in Sources */,
 				F2EF706D29E0593E003B5995 /* AuthViewController.swift in Sources */,
 				F2EF70A329E06387003B5995 /* CustomNavigationController.swift in Sources */,
 				F2EF706929E0593E003B5995 /* AppDelegate.swift in Sources */,
+				F2EF70AA29E0830D003B5995 /* MainTabBarController.swift in Sources */,
 				F2EF706B29E0593E003B5995 /* SceneDelegate.swift in Sources */,
 				F2EF70A529E06E58003B5995 /* SingUpViewController.swift in Sources */,
 				F2EF70A129E061D8003B5995 /* AuthService.swift in Sources */,

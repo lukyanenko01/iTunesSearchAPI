@@ -140,34 +140,6 @@ class SingUpViewController: UIViewController {
         }
     }
     
-    
-    @objc func enterAction() {
-        registerNewUser()
-    }
-
-    @objc func loginAction() {
-        guard let email = emailTextField.text, !email.isEmpty,
-              let password = passwordTextField.text, !password.isEmpty
-        else {
-            //TODO: Показать ошибку, если одно из полей пустое
-            //TODO: Написать проверку паролля
-            return
-        }
-        
-        authService.signIn(email: email, password: password) { result in
-            switch result {
-            case .success():
-                print("User signed in successfully")
-                //TODO: перейти на следующий экран
-            case .failure(let error):
-                print("Error signing in: \(error.localizedDescription)")
-                //TODO: обработать ошибку и показать алерт
-            }
-        }
-    }
-
-
-    
     private func showCodeValid(varification: String) {
         
     }
@@ -193,5 +165,30 @@ class SingUpViewController: UIViewController {
               stacVertical.trailingAnchor.constraint(equalTo: viewBacgraund.trailingAnchor, constant: -20)
           ])
       }
+    
+    @objc func enterAction() {
+        registerNewUser()
+    }
+
+    @objc func loginAction() {
+        guard let email = emailTextField.text, !email.isEmpty,
+              let password = passwordTextField.text, !password.isEmpty
+        else {
+            //TODO: Показать ошибку, если одно из полей пустое
+            //TODO: Написать проверку паролля
+            return
+        }
+        
+        authService.signIn(email: email, password: password) { result in
+            switch result {
+            case .success():
+                print("User signed in successfully")
+                //TODO: перейти на следующий экран
+            case .failure(let error):
+                print("Error signing in: \(error.localizedDescription)")
+                //TODO: обработать ошибку и показать алерт
+            }
+        }
+    }
 }
 //TODO: UITextFieldDelegate
