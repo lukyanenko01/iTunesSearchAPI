@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         let vc = MainTabBarController()
-        window.rootViewController = UINavigationController(rootViewController: vc)
+        window.rootViewController = vc
         window.overrideUserInterfaceStyle = .dark
         window.makeKeyAndVisible()
         self.window = window

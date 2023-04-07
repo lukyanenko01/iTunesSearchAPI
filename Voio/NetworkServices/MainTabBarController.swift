@@ -16,14 +16,17 @@ class MainTabBarController: UITabBarController {
         viewControllers = setViewControllers()
     }
     
+    //TODO: изменить цвет UINavc
+    
     private func configTabBar() {
         tabBar.tintColor = .white
         tabBar.isTranslucent = false
+        tabBar.barTintColor = UIColor(named: "customGrey")
         tabBar.backgroundColor = UIColor(named: "customGrey")
     }
     
     private func setViewControllers() -> [UIViewController]{
-        let catalogNavVc = UINavigationController(rootViewController: UIViewController())
+        let catalogNavVc = UINavigationController(rootViewController: CatalogViewController())
         let menuNavVc = UINavigationController(rootViewController: UIViewController())
         let cartNavVc = UINavigationController(rootViewController: UIViewController())
         

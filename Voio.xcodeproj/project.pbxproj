@@ -22,6 +22,8 @@
 		F2EF70A529E06E58003B5995 /* SingUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70A429E06E58003B5995 /* SingUpViewController.swift */; };
 		F2EF70AA29E0830D003B5995 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70A929E0830D003B5995 /* MainTabBarController.swift */; };
 		F2EF70AD29E0865F003B5995 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70AC29E0865F003B5995 /* CatalogViewController.swift */; };
+		F2EF70B229E087E6003B5995 /* CatalogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70B029E087E6003B5995 /* CatalogCollectionViewCell.swift */; };
+		F2EF70B329E087E6003B5995 /* CatalogCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2EF70B129E087E6003B5995 /* CatalogCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		F2EF70A429E06E58003B5995 /* SingUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewController.swift; sourceTree = "<group>"; };
 		F2EF70A929E0830D003B5995 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		F2EF70AC29E0865F003B5995 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
+		F2EF70B029E087E6003B5995 /* CatalogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCollectionViewCell.swift; sourceTree = "<group>"; };
+		F2EF70B129E087E6003B5995 /* CatalogCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatalogCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				F2EF70AC29E0865F003B5995 /* CatalogViewController.swift */,
+				F2EF70B029E087E6003B5995 /* CatalogCollectionViewCell.swift */,
+				F2EF70B129E087E6003B5995 /* CatalogCollectionViewCell.xib */,
 			);
 			path = CatalogModule;
 			sourceTree = "<group>";
@@ -303,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2EF70B329E087E6003B5995 /* CatalogCollectionViewCell.xib in Resources */,
 				F2EF707529E05940003B5995 /* LaunchScreen.storyboard in Resources */,
 				F2EF707229E05940003B5995 /* Assets.xcassets in Resources */,
 				F2EF709929E05EC5003B5995 /* GoogleService-Info.plist in Resources */,
@@ -331,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2EF70AD29E0865F003B5995 /* CatalogViewController.swift in Sources */,
+				F2EF70B229E087E6003B5995 /* CatalogCollectionViewCell.swift in Sources */,
 				F2EF706D29E0593E003B5995 /* AuthViewController.swift in Sources */,
 				F2EF70A329E06387003B5995 /* CustomNavigationController.swift in Sources */,
 				F2EF706929E0593E003B5995 /* AppDelegate.swift in Sources */,
