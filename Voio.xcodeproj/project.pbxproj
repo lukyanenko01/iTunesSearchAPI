@@ -1,0 +1,607 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F2EF706929E0593E003B5995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF706829E0593E003B5995 /* AppDelegate.swift */; };
+		F2EF706B29E0593E003B5995 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF706A29E0593E003B5995 /* SceneDelegate.swift */; };
+		F2EF706D29E0593E003B5995 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF706C29E0593E003B5995 /* ViewController.swift */; };
+		F2EF707029E0593E003B5995 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2EF706E29E0593E003B5995 /* Main.storyboard */; };
+		F2EF707229E05940003B5995 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2EF707129E05940003B5995 /* Assets.xcassets */; };
+		F2EF707529E05940003B5995 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2EF707329E05940003B5995 /* LaunchScreen.storyboard */; };
+		F2EF708029E05940003B5995 /* VoioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF707F29E05940003B5995 /* VoioTests.swift */; };
+		F2EF708A29E05940003B5995 /* VoioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF708929E05940003B5995 /* VoioUITests.swift */; };
+		F2EF708C29E05940003B5995 /* VoioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF708B29E05940003B5995 /* VoioUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F2EF707C29E05940003B5995 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F2EF705D29E0593E003B5995 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F2EF706429E0593E003B5995;
+			remoteInfo = Voio;
+		};
+		F2EF708629E05940003B5995 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F2EF705D29E0593E003B5995 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F2EF706429E0593E003B5995;
+			remoteInfo = Voio;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F2EF706529E0593E003B5995 /* Voio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voio.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2EF706829E0593E003B5995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F2EF706A29E0593E003B5995 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F2EF706C29E0593E003B5995 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F2EF706F29E0593E003B5995 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F2EF707129E05940003B5995 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F2EF707429E05940003B5995 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F2EF707629E05940003B5995 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2EF707B29E05940003B5995 /* VoioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2EF707F29E05940003B5995 /* VoioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoioTests.swift; sourceTree = "<group>"; };
+		F2EF708529E05940003B5995 /* VoioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2EF708929E05940003B5995 /* VoioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoioUITests.swift; sourceTree = "<group>"; };
+		F2EF708B29E05940003B5995 /* VoioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoioUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F2EF706229E0593E003B5995 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2EF707829E05940003B5995 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2EF708229E05940003B5995 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F2EF705C29E0593E003B5995 = {
+			isa = PBXGroup;
+			children = (
+				F2EF706729E0593E003B5995 /* Voio */,
+				F2EF707E29E05940003B5995 /* VoioTests */,
+				F2EF708829E05940003B5995 /* VoioUITests */,
+				F2EF706629E0593E003B5995 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F2EF706629E0593E003B5995 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F2EF706529E0593E003B5995 /* Voio.app */,
+				F2EF707B29E05940003B5995 /* VoioTests.xctest */,
+				F2EF708529E05940003B5995 /* VoioUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F2EF706729E0593E003B5995 /* Voio */ = {
+			isa = PBXGroup;
+			children = (
+				F2EF706829E0593E003B5995 /* AppDelegate.swift */,
+				F2EF706A29E0593E003B5995 /* SceneDelegate.swift */,
+				F2EF706C29E0593E003B5995 /* ViewController.swift */,
+				F2EF706E29E0593E003B5995 /* Main.storyboard */,
+				F2EF707129E05940003B5995 /* Assets.xcassets */,
+				F2EF707329E05940003B5995 /* LaunchScreen.storyboard */,
+				F2EF707629E05940003B5995 /* Info.plist */,
+			);
+			path = Voio;
+			sourceTree = "<group>";
+		};
+		F2EF707E29E05940003B5995 /* VoioTests */ = {
+			isa = PBXGroup;
+			children = (
+				F2EF707F29E05940003B5995 /* VoioTests.swift */,
+			);
+			path = VoioTests;
+			sourceTree = "<group>";
+		};
+		F2EF708829E05940003B5995 /* VoioUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F2EF708929E05940003B5995 /* VoioUITests.swift */,
+				F2EF708B29E05940003B5995 /* VoioUITestsLaunchTests.swift */,
+			);
+			path = VoioUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F2EF706429E0593E003B5995 /* Voio */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2EF708F29E05940003B5995 /* Build configuration list for PBXNativeTarget "Voio" */;
+			buildPhases = (
+				F2EF706129E0593E003B5995 /* Sources */,
+				F2EF706229E0593E003B5995 /* Frameworks */,
+				F2EF706329E0593E003B5995 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Voio;
+			productName = Voio;
+			productReference = F2EF706529E0593E003B5995 /* Voio.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F2EF707A29E05940003B5995 /* VoioTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2EF709229E05940003B5995 /* Build configuration list for PBXNativeTarget "VoioTests" */;
+			buildPhases = (
+				F2EF707729E05940003B5995 /* Sources */,
+				F2EF707829E05940003B5995 /* Frameworks */,
+				F2EF707929E05940003B5995 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F2EF707D29E05940003B5995 /* PBXTargetDependency */,
+			);
+			name = VoioTests;
+			productName = VoioTests;
+			productReference = F2EF707B29E05940003B5995 /* VoioTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F2EF708429E05940003B5995 /* VoioUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2EF709529E05940003B5995 /* Build configuration list for PBXNativeTarget "VoioUITests" */;
+			buildPhases = (
+				F2EF708129E05940003B5995 /* Sources */,
+				F2EF708229E05940003B5995 /* Frameworks */,
+				F2EF708329E05940003B5995 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F2EF708729E05940003B5995 /* PBXTargetDependency */,
+			);
+			name = VoioUITests;
+			productName = VoioUITests;
+			productReference = F2EF708529E05940003B5995 /* VoioUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F2EF705D29E0593E003B5995 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					F2EF706429E0593E003B5995 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					F2EF707A29E05940003B5995 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = F2EF706429E0593E003B5995;
+					};
+					F2EF708429E05940003B5995 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = F2EF706429E0593E003B5995;
+					};
+				};
+			};
+			buildConfigurationList = F2EF706029E0593E003B5995 /* Build configuration list for PBXProject "Voio" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F2EF705C29E0593E003B5995;
+			productRefGroup = F2EF706629E0593E003B5995 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F2EF706429E0593E003B5995 /* Voio */,
+				F2EF707A29E05940003B5995 /* VoioTests */,
+				F2EF708429E05940003B5995 /* VoioUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F2EF706329E0593E003B5995 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2EF707529E05940003B5995 /* LaunchScreen.storyboard in Resources */,
+				F2EF707229E05940003B5995 /* Assets.xcassets in Resources */,
+				F2EF707029E0593E003B5995 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2EF707929E05940003B5995 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2EF708329E05940003B5995 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F2EF706129E0593E003B5995 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2EF706D29E0593E003B5995 /* ViewController.swift in Sources */,
+				F2EF706929E0593E003B5995 /* AppDelegate.swift in Sources */,
+				F2EF706B29E0593E003B5995 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2EF707729E05940003B5995 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2EF708029E05940003B5995 /* VoioTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2EF708129E05940003B5995 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2EF708A29E05940003B5995 /* VoioUITests.swift in Sources */,
+				F2EF708C29E05940003B5995 /* VoioUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F2EF707D29E05940003B5995 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F2EF706429E0593E003B5995 /* Voio */;
+			targetProxy = F2EF707C29E05940003B5995 /* PBXContainerItemProxy */;
+		};
+		F2EF708729E05940003B5995 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F2EF706429E0593E003B5995 /* Voio */;
+			targetProxy = F2EF708629E05940003B5995 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F2EF706E29E0593E003B5995 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F2EF706F29E0593E003B5995 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F2EF707329E05940003B5995 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F2EF707429E05940003B5995 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F2EF708D29E05940003B5995 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F2EF708E29E05940003B5995 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F2EF709029E05940003B5995 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T73BLRAKR5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Voio/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Voio;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F2EF709129E05940003B5995 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T73BLRAKR5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Voio/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Voio;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F2EF709329E05940003B5995 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T73BLRAKR5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.VoioTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Voio.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Voio";
+			};
+			name = Debug;
+		};
+		F2EF709429E05940003B5995 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T73BLRAKR5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.VoioTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Voio.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Voio";
+			};
+			name = Release;
+		};
+		F2EF709629E05940003B5995 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T73BLRAKR5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.VoioUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Voio;
+			};
+			name = Debug;
+		};
+		F2EF709729E05940003B5995 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T73BLRAKR5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.VoioUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Voio;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F2EF706029E0593E003B5995 /* Build configuration list for PBXProject "Voio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2EF708D29E05940003B5995 /* Debug */,
+				F2EF708E29E05940003B5995 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2EF708F29E05940003B5995 /* Build configuration list for PBXNativeTarget "Voio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2EF709029E05940003B5995 /* Debug */,
+				F2EF709129E05940003B5995 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2EF709229E05940003B5995 /* Build configuration list for PBXNativeTarget "VoioTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2EF709329E05940003B5995 /* Debug */,
+				F2EF709429E05940003B5995 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2EF709529E05940003B5995 /* Build configuration list for PBXNativeTarget "VoioUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2EF709629E05940003B5995 /* Debug */,
+				F2EF709729E05940003B5995 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F2EF705D29E0593E003B5995 /* Project object */;
+}
