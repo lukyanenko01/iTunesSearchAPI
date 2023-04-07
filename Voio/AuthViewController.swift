@@ -135,8 +135,7 @@ class AuthViewController: UIViewController {
     }
     
     @objc func signUpButtonAction() {
-        let controller = UIViewController()
-        controller.view.backgroundColor = .white
+        let controller = SingUpViewController()
         navigationController?.pushViewController(controller, animated: true)
     }
    
