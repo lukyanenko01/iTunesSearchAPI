@@ -20,13 +20,13 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jT6-kF-bbo">
                         <rect key="frame" x="0.0" y="0.0" width="164" height="212"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="SWK-1u-TRs">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SWK-1u-TRs">
                                 <rect key="frame" x="0.0" y="0.0" width="164" height="172"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Pyw-b8-igH">
                                 <rect key="frame" x="10" y="180" width="144" height="32"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guitar Camp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9Z-OS-WJ0">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guitar Camp" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9Z-OS-WJ0">
                                         <rect key="frame" x="0.0" y="0.0" width="144" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16" id="RcG-8V-tXW"/>
@@ -88,7 +88,4 @@
             <point key="canvasLocation" x="400" y="-54.929577464788736"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="image" width="640" height="640"/>
-    </resources>
 </document>

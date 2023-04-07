@@ -6,45 +6,64 @@
 //
 
 import UIKit
+import SDWebImage
 
-class CatalogViewController: UIViewController {
+class CatalogViewController: UIViewController, CatalogView {
+    
+    private let activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .large)
+        indicator.color = .white
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        return indicator
+    }()
+    
+    private let searchController = UISearchController(searchResultsController: nil)
     
     private var collection = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     
     private var movies: [Movie] = []
+        
+    private let movieService = MovieService()
+    
+    var presenter: CatalogPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "custumBlack")
         title = "Catalog"
-        searchMovies(query: "Marvel")
-        
+        presenter.viewDidLoad()
+        setupSearchController()
         configColletionView()
         setConstraints()
     }
     
-    func searchMovies(query: String) {
-        let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-        let urlString = "https://itunes.apple.com/search?term=\(encodedQuery)&media=movie&limit=8"
-        
-        if let url = URL(string: urlString) {
-            let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-                if let error = error {
-                    print("Error: \(error)")
-                } else if let data = data {
-                    do {
-                        let searchResult = try JSONDecoder().decode(SearchResult.self, from: data)
-                        self.movies = searchResult.results
-                        DispatchQueue.main.async {
-                            self.collection.reloadData()
-                        }
-                    } catch {
-                        print("Error decoding JSON: \(error)")
-                    }
-                }
-            }
-            task.resume()
+    func setLoadingIndicator(isLoading: Bool) {
+        if isLoading {
+            activityIndicator.startAnimating()
+            collection.isHidden = true
+        } else {
+            activityIndicator.stopAnimating()
+            collection.isHidden = false
         }
+    }
+    
+    func updateMovies(movies: [Movie]) {
+        self.movies = movies
+        DispatchQueue.main.async {
+            self.collection.reloadData()
+        }
+    }
+    
+    func showError(error: Error) {
+        print("Error: \(error)")
+    }
+    
+    private func setupSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Movies"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
     
     private func configColletionView() {
@@ -57,10 +76,14 @@ class CatalogViewController: UIViewController {
         collection.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    
     private func setConstraints() {
         view.addSubview(collection)
+        view.addSubview(activityIndicator)
+        
         NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
             collection.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
             collection.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             collection.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
@@ -79,21 +102,7 @@ extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CatalogCollectionViewCell.id, for: indexPath) as? CatalogCollectionViewCell else { return UICollectionViewCell() }
         
-        let movie = movies[indexPath.item]
-        cell.titleLabel.text = movie.trackName
-        cell.genreLabel.text = movie.primaryGenreName
-        cell.yearsLabel.text = String(movie.releaseDate.prefix(4))
-        
-        if let imageUrl = URL(string: movie.artworkUrlHighQuality) {
-            DispatchQueue.global().async {
-                if let imageData = try? Data(contentsOf: imageUrl) {
-                    DispatchQueue.main.async {
-                        cell.ImageView.image = UIImage(data: imageData)
-                    }
-                }
-            }
-        }
-        
+        cell.setupCell(movie: movies[indexPath.item]) 
         
         return cell
     }
@@ -118,4 +127,12 @@ extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDel
         0
     }
     
+}
+
+extension CatalogViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text, !searchText.isEmpty {
+            presenter.searchMovies(query: searchText)
+        }
+    }
 }

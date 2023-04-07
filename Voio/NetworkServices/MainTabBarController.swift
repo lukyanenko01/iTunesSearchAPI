@@ -26,7 +26,14 @@ class MainTabBarController: UITabBarController {
     }
     
     private func setViewControllers() -> [UIViewController]{
-        let catalogNavVc = UINavigationController(rootViewController: CatalogViewController())
+//        let catalogNavVc = UINavigationController(rootViewController: CatalogViewController())
+        
+        let catalogViewController = CatalogViewController()
+        let movieService = MovieService()
+        let catalogPresenter = CatalogPresenterImplementation(view: catalogViewController, interactor: movieService)
+        catalogViewController.presenter = catalogPresenter
+        let catalogNavVc = UINavigationController(rootViewController: catalogViewController)
+
         let menuNavVc = UINavigationController(rootViewController: UIViewController())
         let cartNavVc = UINavigationController(rootViewController: UIViewController())
         

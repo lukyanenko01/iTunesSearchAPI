@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5FE9EC0612ABC6E4D7F3D5BF /* Pods_VoioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92045854129E7F6374BC731B /* Pods_VoioTests.framework */; };
+		6ED6A376E718F2F8DB315D1C /* Pods_Voio_VoioUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC803078BC7EE827B4B219AD /* Pods_Voio_VoioUITests.framework */; };
+		C8AF088EFDC07735EA4B2D15 /* Pods_Voio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D138691600E0A049AACCF7D /* Pods_Voio.framework */; };
 		F2EF706929E0593E003B5995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF706829E0593E003B5995 /* AppDelegate.swift */; };
 		F2EF706B29E0593E003B5995 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF706A29E0593E003B5995 /* SceneDelegate.swift */; };
 		F2EF706D29E0593E003B5995 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF706C29E0593E003B5995 /* AuthViewController.swift */; };
@@ -24,6 +27,10 @@
 		F2EF70AD29E0865F003B5995 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70AC29E0865F003B5995 /* CatalogViewController.swift */; };
 		F2EF70B229E087E6003B5995 /* CatalogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70B029E087E6003B5995 /* CatalogCollectionViewCell.swift */; };
 		F2EF70B329E087E6003B5995 /* CatalogCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2EF70B129E087E6003B5995 /* CatalogCollectionViewCell.xib */; };
+		F2EF70B629E0AFDF003B5995 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70B529E0AFDF003B5995 /* Movie.swift */; };
+		F2EF70BA29E0B222003B5995 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70B929E0B222003B5995 /* MovieService.swift */; };
+		F2EF70BD29E0B363003B5995 /* CatalogPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70BC29E0B363003B5995 /* CatalogPresenter.swift */; };
+		F2EF70BF29E0B4FE003B5995 /* CatalogPresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70BE29E0B4FD003B5995 /* CatalogPresenterImplementation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +51,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		161C099047FFCFDEDB8CDD98 /* Pods-Voio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voio.release.xcconfig"; path = "Target Support Files/Pods-Voio/Pods-Voio.release.xcconfig"; sourceTree = "<group>"; };
+		3B9A75C17C1AD9CEF914129B /* Pods-VoioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoioTests.debug.xcconfig"; path = "Target Support Files/Pods-VoioTests/Pods-VoioTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6D138691600E0A049AACCF7D /* Pods_Voio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Voio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75013E709E04912411B007A8 /* Pods-Voio-VoioUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voio-VoioUITests.release.xcconfig"; path = "Target Support Files/Pods-Voio-VoioUITests/Pods-Voio-VoioUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8F7D10C2A07283A5F8430F3E /* Pods-Voio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voio.debug.xcconfig"; path = "Target Support Files/Pods-Voio/Pods-Voio.debug.xcconfig"; sourceTree = "<group>"; };
+		9170AECEEC326D63B56E0819 /* Pods-VoioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoioTests.release.xcconfig"; path = "Target Support Files/Pods-VoioTests/Pods-VoioTests.release.xcconfig"; sourceTree = "<group>"; };
+		92045854129E7F6374BC731B /* Pods_VoioTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoioTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC803078BC7EE827B4B219AD /* Pods_Voio_VoioUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Voio_VoioUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2EF706529E0593E003B5995 /* Voio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2EF706829E0593E003B5995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2EF706A29E0593E003B5995 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +79,11 @@
 		F2EF70AC29E0865F003B5995 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
 		F2EF70B029E087E6003B5995 /* CatalogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCollectionViewCell.swift; sourceTree = "<group>"; };
 		F2EF70B129E087E6003B5995 /* CatalogCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatalogCollectionViewCell.xib; sourceTree = "<group>"; };
+		F2EF70B529E0AFDF003B5995 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		F2EF70B929E0B222003B5995 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
+		F2EF70BC29E0B363003B5995 /* CatalogPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogPresenter.swift; sourceTree = "<group>"; };
+		F2EF70BE29E0B4FD003B5995 /* CatalogPresenterImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogPresenterImplementation.swift; sourceTree = "<group>"; };
+		F3ED9A36D02917F68AD73FF8 /* Pods-Voio-VoioUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voio-VoioUITests.debug.xcconfig"; path = "Target Support Files/Pods-Voio-VoioUITests/Pods-Voio-VoioUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +92,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2EF709C29E05F1D003B5995 /* FirebaseAuth in Frameworks */,
+				C8AF088EFDC07735EA4B2D15 /* Pods_Voio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FE9EC0612ABC6E4D7F3D5BF /* Pods_VoioTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,12 +108,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ED6A376E718F2F8DB315D1C /* Pods_Voio_VoioUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		303DE2AE4A2592103216A640 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D138691600E0A049AACCF7D /* Pods_Voio.framework */,
+				DC803078BC7EE827B4B219AD /* Pods_Voio_VoioUITests.framework */,
+				92045854129E7F6374BC731B /* Pods_VoioTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D86AB5F6FE657B4CC47EF81B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8F7D10C2A07283A5F8430F3E /* Pods-Voio.debug.xcconfig */,
+				161C099047FFCFDEDB8CDD98 /* Pods-Voio.release.xcconfig */,
+				F3ED9A36D02917F68AD73FF8 /* Pods-Voio-VoioUITests.debug.xcconfig */,
+				75013E709E04912411B007A8 /* Pods-Voio-VoioUITests.release.xcconfig */,
+				3B9A75C17C1AD9CEF914129B /* Pods-VoioTests.debug.xcconfig */,
+				9170AECEEC326D63B56E0819 /* Pods-VoioTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F2EF705C29E0593E003B5995 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +145,8 @@
 				F2EF707E29E05940003B5995 /* VoioTests */,
 				F2EF708829E05940003B5995 /* VoioUITests */,
 				F2EF706629E0593E003B5995 /* Products */,
+				D86AB5F6FE657B4CC47EF81B /* Pods */,
+				303DE2AE4A2592103216A640 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				F2EF70A029E061D8003B5995 /* AuthService.swift */,
+				F2EF70B929E0B222003B5995 /* MovieService.swift */,
 			);
 			path = NetworkServices;
 			sourceTree = "<group>";
@@ -192,11 +241,46 @@
 		F2EF70AB29E0863D003B5995 /* CatalogModule */ = {
 			isa = PBXGroup;
 			children = (
-				F2EF70AC29E0865F003B5995 /* CatalogViewController.swift */,
+				F2EF70B429E0AFD4003B5995 /* Model */,
+				F2EF70B829E0B14F003B5995 /* View */,
+				F2EF70BB29E0B344003B5995 /* Presenter */,
+			);
+			path = CatalogModule;
+			sourceTree = "<group>";
+		};
+		F2EF70B429E0AFD4003B5995 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F2EF70B529E0AFDF003B5995 /* Movie.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F2EF70B729E0B139003B5995 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
 				F2EF70B029E087E6003B5995 /* CatalogCollectionViewCell.swift */,
 				F2EF70B129E087E6003B5995 /* CatalogCollectionViewCell.xib */,
 			);
-			path = CatalogModule;
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F2EF70B829E0B14F003B5995 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F2EF70AC29E0865F003B5995 /* CatalogViewController.swift */,
+				F2EF70B729E0B139003B5995 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F2EF70BB29E0B344003B5995 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F2EF70BC29E0B363003B5995 /* CatalogPresenter.swift */,
+				F2EF70BE29E0B4FD003B5995 /* CatalogPresenterImplementation.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,9 +290,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F2EF708F29E05940003B5995 /* Build configuration list for PBXNativeTarget "Voio" */;
 			buildPhases = (
+				FB3D0D989C1B4590687F106E /* [CP] Check Pods Manifest.lock */,
 				F2EF706129E0593E003B5995 /* Sources */,
 				F2EF706229E0593E003B5995 /* Frameworks */,
 				F2EF706329E0593E003B5995 /* Resources */,
+				0ABBD8CA1E1B58424B5A41C7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -226,6 +312,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F2EF709229E05940003B5995 /* Build configuration list for PBXNativeTarget "VoioTests" */;
 			buildPhases = (
+				1C904761B52387909D8A684D /* [CP] Check Pods Manifest.lock */,
 				F2EF707729E05940003B5995 /* Sources */,
 				F2EF707829E05940003B5995 /* Frameworks */,
 				F2EF707929E05940003B5995 /* Resources */,
@@ -244,9 +331,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F2EF709529E05940003B5995 /* Build configuration list for PBXNativeTarget "VoioUITests" */;
 			buildPhases = (
+				73762B655B4DBCD8672F6573 /* [CP] Check Pods Manifest.lock */,
 				F2EF708129E05940003B5995 /* Sources */,
 				F2EF708229E05940003B5995 /* Frameworks */,
 				F2EF708329E05940003B5995 /* Resources */,
+				DDEBD2DB806AEDD0A4BC98AD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -332,6 +421,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0ABBD8CA1E1B58424B5A41C7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Voio/Pods-Voio-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Voio/Pods-Voio-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Voio/Pods-Voio-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1C904761B52387909D8A684D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VoioTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73762B655B4DBCD8672F6573 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Voio-VoioUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DDEBD2DB806AEDD0A4BC98AD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Voio-VoioUITests/Pods-Voio-VoioUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Voio-VoioUITests/Pods-Voio-VoioUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Voio-VoioUITests/Pods-Voio-VoioUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB3D0D989C1B4590687F106E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Voio-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F2EF706129E0593E003B5995 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -341,11 +533,15 @@
 				F2EF70B229E087E6003B5995 /* CatalogCollectionViewCell.swift in Sources */,
 				F2EF706D29E0593E003B5995 /* AuthViewController.swift in Sources */,
 				F2EF70A329E06387003B5995 /* CustomNavigationController.swift in Sources */,
+				F2EF70B629E0AFDF003B5995 /* Movie.swift in Sources */,
+				F2EF70BF29E0B4FE003B5995 /* CatalogPresenterImplementation.swift in Sources */,
 				F2EF706929E0593E003B5995 /* AppDelegate.swift in Sources */,
 				F2EF70AA29E0830D003B5995 /* MainTabBarController.swift in Sources */,
 				F2EF706B29E0593E003B5995 /* SceneDelegate.swift in Sources */,
+				F2EF70BD29E0B363003B5995 /* CatalogPresenter.swift in Sources */,
 				F2EF70A529E06E58003B5995 /* SingUpViewController.swift in Sources */,
 				F2EF70A129E061D8003B5995 /* AuthService.swift in Sources */,
+				F2EF70BA29E0B222003B5995 /* MovieService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +707,7 @@
 		};
 		F2EF709029E05940003B5995 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F7D10C2A07283A5F8430F3E /* Pods-Voio.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -544,6 +741,7 @@
 		};
 		F2EF709129E05940003B5995 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 161C099047FFCFDEDB8CDD98 /* Pods-Voio.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -577,6 +775,7 @@
 		};
 		F2EF709329E05940003B5995 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B9A75C17C1AD9CEF914129B /* Pods-VoioTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -597,6 +796,7 @@
 		};
 		F2EF709429E05940003B5995 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9170AECEEC326D63B56E0819 /* Pods-VoioTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -617,6 +817,7 @@
 		};
 		F2EF709629E05940003B5995 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3ED9A36D02917F68AD73FF8 /* Pods-Voio-VoioUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -635,6 +836,7 @@
 		};
 		F2EF709729E05940003B5995 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75013E709E04912411B007A8 /* Pods-Voio-VoioUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
