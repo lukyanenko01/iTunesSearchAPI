@@ -10,14 +10,41 @@ import UIKit
 class CatalogViewController: UIViewController {
     
     private var collection = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-
+    
+    private var movies: [Movie] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "custumBlack")
         title = "Catalog"
+        searchMovies(query: "Marvel")
         
         configColletionView()
         setConstraints()
+    }
+    
+    func searchMovies(query: String) {
+        let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        let urlString = "https://itunes.apple.com/search?term=\(encodedQuery)&media=movie&limit=8"
+        
+        if let url = URL(string: urlString) {
+            let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+                if let error = error {
+                    print("Error: \(error)")
+                } else if let data = data {
+                    do {
+                        let searchResult = try JSONDecoder().decode(SearchResult.self, from: data)
+                        self.movies = searchResult.results
+                        DispatchQueue.main.async {
+                            self.collection.reloadData()
+                        }
+                    } catch {
+                        print("Error decoding JSON: \(error)")
+                    }
+                }
+            }
+            task.resume()
+        }
     }
     
     private func configColletionView() {
@@ -29,7 +56,7 @@ class CatalogViewController: UIViewController {
         collection.delegate = self
         collection.translatesAutoresizingMaskIntoConstraints = false
     }
-
+    
     
     private func setConstraints() {
         view.addSubview(collection)
@@ -46,13 +73,31 @@ class CatalogViewController: UIViewController {
 extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return movies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CatalogCollectionViewCell.id, for: indexPath) as? CatalogCollectionViewCell else { return UICollectionViewCell() }
+        
+        let movie = movies[indexPath.item]
+        cell.titleLabel.text = movie.trackName
+        cell.genreLabel.text = movie.primaryGenreName
+        cell.yearsLabel.text = String(movie.releaseDate.prefix(4))
+        
+        if let imageUrl = URL(string: movie.artworkUrlHighQuality) {
+            DispatchQueue.global().async {
+                if let imageData = try? Data(contentsOf: imageUrl) {
+                    DispatchQueue.main.async {
+                        cell.ImageView.image = UIImage(data: imageData)
+                    }
+                }
+            }
+        }
+        
+        
         return cell
     }
+    
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
