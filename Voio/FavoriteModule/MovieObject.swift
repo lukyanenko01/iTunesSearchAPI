@@ -9,6 +9,8 @@ import Foundation
 import RealmSwift
 
 class MovieObject: Object {
+    @objc dynamic var trackId: Int = 0
+    
     @objc dynamic var trackName: String = ""
     @objc dynamic var primaryGenreName: String = ""
     @objc dynamic var releaseDate: String = ""

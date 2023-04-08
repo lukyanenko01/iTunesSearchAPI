@@ -74,7 +74,7 @@ class DetailsViewController: UIViewController {
     private let addFavoriteButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = #colorLiteral(red: 0.8882787824, green: 0.158880502, blue: 0.2406231761, alpha: 1)
-        button.setTitle("v favorite add", for: .normal)
+        button.setTitle("Add to Favorites", for: .normal)
         button.titleLabel?.font = UIFont(name: "Avenir Next Demi Bold", size: 14)
         button.layer.cornerRadius = 10
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -146,6 +146,20 @@ class DetailsViewController: UIViewController {
             imageView.sd_setImage(with: imageUrl, completed: nil)
         }
         
+        updateFavoriteButton(movieInFavorites: isMovieInFavorites(trackId: movie.trackId))
+        
+    }
+    
+    func updateFavoriteButton(movieInFavorites: Bool) {
+        if movieInFavorites {
+            addFavoriteButton.backgroundColor = .white
+            addFavoriteButton.setTitle("Delete", for: .normal)
+            addFavoriteButton.setTitleColor(.black, for: .normal)
+        } else {
+            addFavoriteButton.backgroundColor = #colorLiteral(red: 0.8882787824, green: 0.158880502, blue: 0.2406231761, alpha: 1)
+            addFavoriteButton.setTitle("Add to Favorites", for: .normal)
+            addFavoriteButton.setTitleColor(.white, for: .normal)
+        }
     }
     
     private func setDescriptionTextField(text: String) {
@@ -168,7 +182,7 @@ class DetailsViewController: UIViewController {
         movieObject.contentAdvisoryRating = movie.contentAdvisoryRating ?? "N/A"
         movieObject.longDescription = movie.longDescription ?? "N/A"
         movieObject.artworkUrlHighQuality = movie.artworkUrlHighQuality
-        
+        movieObject.trackId = movie.trackId
         do {
             let realm = try Realm()
             try realm.write {
@@ -179,6 +193,19 @@ class DetailsViewController: UIViewController {
             //TODO: вызывать алерт
         }
     }
+    
+    func isMovieInFavorites(trackId: Int) -> Bool {
+        do {
+            let realm = try Realm()
+            let movieObject = realm.objects(MovieObject.self).filter("trackId = %@", trackId).first
+            return movieObject != nil
+        } catch {
+            //TODO: alert
+            print("Error checking movie in Realm: \(error.localizedDescription)")
+            return false
+        }
+    }
+    
     
     
     private func setConstraints() {
@@ -207,7 +234,30 @@ class DetailsViewController: UIViewController {
     
     @objc func addFavoriteButtonAction() {
         guard let favoriteMovie = movie else { return }
-        saveMovieToRealm(movie: favoriteMovie)
+        let movieInFavorites = isMovieInFavorites(trackId: favoriteMovie.trackId)
+        
+        if movieInFavorites {
+            deleteMovieFromRealm(trackId: favoriteMovie.trackId)
+        } else {
+            saveMovieToRealm(movie: favoriteMovie)
+        }
+        
+        updateFavoriteButton(movieInFavorites: !movieInFavorites)
+        dismiss(animated: true)
     }
+    
+    func deleteMovieFromRealm(trackId: Int) {
+        do {
+            let realm = try Realm()
+            if let movieObject = realm.objects(MovieObject.self).filter("trackId = %@", trackId).first {
+                try realm.write {
+                    realm.delete(movieObject)
+                }
+            }
+        } catch {
+            print("Error deleting movie from Realm: \(error.localizedDescription)")
+        }
+    }
+    
     
 }
