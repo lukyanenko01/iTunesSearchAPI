@@ -140,10 +140,17 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		F2AE955229E1945600C1636D /* FavoriteModule */ = {
+		F2AE955229E1945600C1636D /* DetailsModule */ = {
 			isa = PBXGroup;
 			children = (
 				F2AE955329E1948500C1636D /* DetailsViewController.swift */,
+			);
+			path = DetailsModule;
+			sourceTree = "<group>";
+		};
+		F2AE955729E1A64C00C1636D /* FavoriteModule */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = FavoriteModule;
 			sourceTree = "<group>";
@@ -178,7 +185,8 @@
 				F2EF70A729E08103003B5995 /* AuthModule */,
 				F2EF70A829E08240003B5995 /* TabBar */,
 				F2EF70AB29E0863D003B5995 /* CatalogModule */,
-				F2AE955229E1945600C1636D /* FavoriteModule */,
+				F2AE955229E1945600C1636D /* DetailsModule */,
+				F2AE955729E1A64C00C1636D /* FavoriteModule */,
 				F2EF709E29E06052003B5995 /* Resources */,
 			);
 			path = Voio;

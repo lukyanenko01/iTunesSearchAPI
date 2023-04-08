@@ -7,6 +7,8 @@ target 'Voio' do
 
   # Pods for Voio
  pod 'SDWebImage'
+ pod 'RealmSwift'
+
 
 
 
