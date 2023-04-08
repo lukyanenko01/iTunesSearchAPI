@@ -32,7 +32,7 @@ class MainTabBarController: UITabBarController {
         let catalogPresenter = CatalogPresenterImplementation(view: catalogViewController, interactor: movieService)
         catalogViewController.presenter = catalogPresenter
         let catalogNavVc = UINavigationController(rootViewController: catalogViewController)
-
+        
         let favoriteNavVc = UINavigationController(rootViewController: FavoriteViewController())
         let profileNavVc = UINavigationController(rootViewController: UIViewController())
         
@@ -74,5 +74,5 @@ class MainTabBarController: UITabBarController {
             }
         }
     }
-
+    
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 class AuthViewController: UIViewController {
-        
+    
     private let viewBacgraund: UIView = {
         let view = UIView()
         view.backgroundColor = #colorLiteral(red: 0.1294117647, green: 0.1568627451, blue: 0.2470588235, alpha: 1)
@@ -24,7 +24,7 @@ class AuthViewController: UIViewController {
         label.text = "Time to music."
         return label
     }()
-
+    
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -33,7 +33,7 @@ class AuthViewController: UIViewController {
         label.text = "Not with us yet? Register now!"
         return label
     }()
-        
+    
     private let logInButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .white
@@ -72,7 +72,7 @@ class AuthViewController: UIViewController {
         
         logInButton.addTarget(self, action: #selector(logInButtonAction), for: .touchUpInside)
         signUpButton.addTarget(self, action: #selector(signUpButtonAction), for: .touchUpInside)
-
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -130,7 +130,7 @@ class AuthViewController: UIViewController {
         let controller = SingUpViewController()
         controller.isLoginMode = true
         navigationController?.pushViewController(controller, animated: true)
-
+        
     }
     
     @objc func signUpButtonAction() {
@@ -138,7 +138,7 @@ class AuthViewController: UIViewController {
         controller.isLoginMode = false
         navigationController?.pushViewController(controller, animated: true)
     }
-   
+    
     
 }
 

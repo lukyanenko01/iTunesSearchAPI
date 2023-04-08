@@ -113,9 +113,9 @@ class DetailsViewController: UIViewController {
             self.scrollView.contentSize = CGSize(width: contentRect.width, height: contentRect.height + 80)
         }
     }
-
-
-
+    
+    
+    
     
     func setupViewController(movie: Movie) {
         self.movie = movie
@@ -125,12 +125,12 @@ class DetailsViewController: UIViewController {
         ratingLabel.text = movie.contentAdvisoryRating
         setDescriptionTextField(text: movie.longDescription ?? "N/A")
         updateContentSize()
-
+        
         if let imageUrl = URL(string: movie.artworkUrlHighQuality) {
             imageView.sd_imageIndicator = SDWebImageActivityIndicator.medium
             imageView.sd_setImage(with: imageUrl, completed: nil)
         }
-
+        
     }
     
     func setupViewToFavoritesController(movie: MovieObject) {
@@ -140,7 +140,7 @@ class DetailsViewController: UIViewController {
         ratingLabel.text = movie.contentAdvisoryRating
         setDescriptionTextField(text: movie.longDescription)
         updateContentSize()
-
+        
         if let imageUrl = URL(string: movie.artworkUrlHighQuality) {
             imageView.sd_imageIndicator = SDWebImageActivityIndicator.medium
             imageView.sd_setImage(with: imageUrl, completed: nil)
@@ -192,7 +192,7 @@ class DetailsViewController: UIViewController {
             imageView.widthAnchor.constraint(equalToConstant: view.bounds.width-40),
             imageView.heightAnchor.constraint(equalToConstant: view.bounds.height/3),
             imageView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-
+            
             stacVertical.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
             stacVertical.widthAnchor.constraint(equalToConstant: view.bounds.width-40),
             stacVertical.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
@@ -204,7 +204,7 @@ class DetailsViewController: UIViewController {
             addFavoriteButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -20)
         ])
     }
-
+    
     @objc func addFavoriteButtonAction() {
         guard let favoriteMovie = movie else { return }
         saveMovieToRealm(movie: favoriteMovie)

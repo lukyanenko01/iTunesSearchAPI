@@ -22,7 +22,7 @@ class CatalogViewController: UIViewController, CatalogView {
     private var collection = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     
     private var movies: [Movie] = []
-        
+    
     private let movieService = MovieService()
     
     var presenter: CatalogPresenter!

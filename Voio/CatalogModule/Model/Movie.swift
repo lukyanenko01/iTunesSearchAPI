@@ -18,7 +18,7 @@ struct Movie: Codable {
     let releaseDate: String
     let contentAdvisoryRating: String?
     let longDescription: String?
-
+    
     var artworkUrlHighQuality: String {
         return artworkUrl100.replacingOccurrences(of: "100x100", with: "164x172")
     }

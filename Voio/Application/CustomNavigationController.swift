@@ -29,7 +29,7 @@ class CustomNavigationControllerDelegate: NSObject, UINavigationControllerDelega
         }
         return nil
     }
-
+    
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return CustomDismissNavigationAnimator()
     }
@@ -65,18 +65,18 @@ class CustomPopNavigationAnimator: NSObject, UIViewControllerAnimatedTransitioni
 
 
 class CustomDismissNavigationAnimator: NSObject, UIViewControllerAnimatedTransitioning {
-
+    
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.4
     }
-
+    
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         guard let fromViewController = transitionContext.viewController(forKey: .from) else { return }
-
+        
         let containerView = transitionContext.containerView
-
+        
         let duration = transitionDuration(using: transitionContext)
-
+        
         UIView.animate(withDuration: duration, animations: {
             fromViewController.view.alpha = 0.0
             fromViewController.view.transform = CGAffineTransform(translationX: 0, y: containerView.bounds.height)
@@ -93,23 +93,23 @@ class CustomPushNavigationAnimator: NSObject, UIViewControllerAnimatedTransition
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         guard let _ = transitionContext.viewController(forKey: .from),
-                 let toViewController = transitionContext.viewController(forKey: .to) else { return }
-           
-           let containerView = transitionContext.containerView
-           
-           containerView.addSubview(toViewController.view)
-           containerView.bringSubviewToFront(toViewController.view)
-           
-           toViewController.view.alpha = 0.0
-           toViewController.view.transform = CGAffineTransform(translationX: 0, y: containerView.bounds.height)
-           
-           let duration = transitionDuration(using: transitionContext)
-           
-           UIView.animate(withDuration: duration, animations: {
-               toViewController.view.alpha = 1.0
-               toViewController.view.transform = .identity
-           }) { (finished) in
-               transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-           }
-       }
+              let toViewController = transitionContext.viewController(forKey: .to) else { return }
+        
+        let containerView = transitionContext.containerView
+        
+        containerView.addSubview(toViewController.view)
+        containerView.bringSubviewToFront(toViewController.view)
+        
+        toViewController.view.alpha = 0.0
+        toViewController.view.transform = CGAffineTransform(translationX: 0, y: containerView.bounds.height)
+        
+        let duration = transitionDuration(using: transitionContext)
+        
+        UIView.animate(withDuration: duration, animations: {
+            toViewController.view.alpha = 1.0
+            toViewController.view.transform = .identity
+        }) { (finished) in
+            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+        }
+    }
 }

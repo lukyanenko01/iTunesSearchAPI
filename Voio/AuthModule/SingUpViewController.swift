@@ -39,7 +39,7 @@ class SingUpViewController: UIViewController {
                                                              attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
         return textField
     }()
-
+    
     private let passwordTextField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
@@ -65,10 +65,10 @@ class SingUpViewController: UIViewController {
                                                              attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
         return textField
     }()
-
-        
+    
+    
     private let buttonEnter: UIButton = {
-       let button = UIButton()
+        let button = UIButton()
         button.backgroundColor = .red
         button.setTitle("Сonfirm", for: .normal)
         button.titleLabel?.font = UIFont(name: "Avenir Next Demi Bold", size: 19)
@@ -78,13 +78,13 @@ class SingUpViewController: UIViewController {
     
     
     private lazy var stacVertical: UIStackView = {
-       let stac = UIStackView(arrangedSubviews: [titleLbl, emailTextField, passwordTextField, curentPasswordTextField, buttonEnter])
+        let stac = UIStackView(arrangedSubviews: [titleLbl, emailTextField, passwordTextField, curentPasswordTextField, buttonEnter])
         stac.axis = .vertical
         stac.spacing = 15
         stac.translatesAutoresizingMaskIntoConstraints = false
         return stac
     }()
-                
+    
     var isLoginMode = false
     private var viewBacgraundHeightConstraint: NSLayoutConstraint?
     private let authService = AuthService()
@@ -145,31 +145,31 @@ class SingUpViewController: UIViewController {
     }
     
     private func setConstraint() {
-          view.addSubview(viewBacgraund)
-          view.addSubview(stacVertical)
-          
-          NSLayoutConstraint.activate([
-              viewBacgraund.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-              viewBacgraund.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -40),
-              viewBacgraund.widthAnchor.constraint(equalToConstant: view.bounds.width-50)
-          ])
-          
-          viewBacgraundHeightConstraint = viewBacgraund.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/2.5)
-          viewBacgraundHeightConstraint?.isActive = true
-          
-          NSLayoutConstraint.activate([
-              buttonEnter.heightAnchor.constraint(equalToConstant: 40),
-              stacVertical.centerXAnchor.constraint(equalTo: viewBacgraund.centerXAnchor),
-              stacVertical.centerYAnchor.constraint(equalTo: viewBacgraund.centerYAnchor),
-              stacVertical.leadingAnchor.constraint(equalTo: viewBacgraund.leadingAnchor, constant: 20),
-              stacVertical.trailingAnchor.constraint(equalTo: viewBacgraund.trailingAnchor, constant: -20)
-          ])
-      }
+        view.addSubview(viewBacgraund)
+        view.addSubview(stacVertical)
+        
+        NSLayoutConstraint.activate([
+            viewBacgraund.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            viewBacgraund.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -40),
+            viewBacgraund.widthAnchor.constraint(equalToConstant: view.bounds.width-50)
+        ])
+        
+        viewBacgraundHeightConstraint = viewBacgraund.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/2.5)
+        viewBacgraundHeightConstraint?.isActive = true
+        
+        NSLayoutConstraint.activate([
+            buttonEnter.heightAnchor.constraint(equalToConstant: 40),
+            stacVertical.centerXAnchor.constraint(equalTo: viewBacgraund.centerXAnchor),
+            stacVertical.centerYAnchor.constraint(equalTo: viewBacgraund.centerYAnchor),
+            stacVertical.leadingAnchor.constraint(equalTo: viewBacgraund.leadingAnchor, constant: 20),
+            stacVertical.trailingAnchor.constraint(equalTo: viewBacgraund.trailingAnchor, constant: -20)
+        ])
+    }
     
     @objc func enterAction() {
         registerNewUser()
     }
-
+    
     @objc func loginAction() {
         guard let email = emailTextField.text, !email.isEmpty,
               let password = passwordTextField.text, !password.isEmpty
