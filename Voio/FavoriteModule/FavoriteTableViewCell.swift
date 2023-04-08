@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class FavoriteTableViewCell: UITableViewCell {
     
@@ -37,6 +38,11 @@ class FavoriteTableViewCell: UITableViewCell {
         viewBacgraund.titleLabel.text = movie.trackName
         viewBacgraund.genreLabel.text = movie.primaryGenreName
         viewBacgraund.yearsLabel.text = String(movie.releaseDate.prefix(4))
+        
+        if let imageUrl = URL(string: movie.artworkUrlHighQuality) {
+            viewBacgraund.imageView.sd_imageIndicator = SDWebImageActivityIndicator.medium
+            viewBacgraund.imageView.sd_setImage(with: imageUrl, completed: nil)
+        }
     }
     
     private func setConstraints() {
@@ -45,7 +51,7 @@ class FavoriteTableViewCell: UITableViewCell {
             viewBacgraund.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
             viewBacgraund.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             viewBacgraund.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
-            viewBacgraund.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
+            viewBacgraund.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
         ])
     }
 }

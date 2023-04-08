@@ -91,6 +91,11 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        guard let movie = movies?[indexPath.row] else { return }
+        
+        let detailsViewController = DetailsViewController()
+        detailsViewController.setupViewToFavoritesController(movie: movie)
+        present(detailsViewController, animated: true)
     }
     
 }

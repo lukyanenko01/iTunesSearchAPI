@@ -9,23 +9,23 @@ import UIKit
 
 class FavoriteViewCell: UIView {
     
-    private let imageView: UIImageView = {
+    let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
         imageView.layer.cornerRadius = 12
         imageView.clipsToBounds = true
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
-    var titleLabel = UILabel(text: "", font: UIFont(name: "Arial", size: 18), alignment: .right)
-    var genreLabel = UILabel(text: "", font: UIFont(name: "Arial", size: 14), alignment: .right)
-    var yearsLabel = UILabel(text: "", font: UIFont(name: "Arial", size: 14), alignment: .center)
+    var titleLabel = UILabel(text: "", font: UIFont(name: "Arial", size: 18), alignment: .left)
+    var genreLabel = UILabel(text: "", font: UIFont(name: "Arial", size: 14), alignment: .left)
+    var yearsLabel = UILabel(text: "", font: UIFont(name: "Arial", size: 14), alignment: .left)
     
     private lazy var stacHorizontal: UIStackView = {
         let stac = UIStackView(arrangedSubviews: [genreLabel, yearsLabel])
         stac.axis = .horizontal
         stac.distribution = .equalCentering
+        stac.translatesAutoresizingMaskIntoConstraints = false
         return stac
     }()
     
@@ -33,10 +33,18 @@ class FavoriteViewCell: UIView {
         let stac = UIStackView(arrangedSubviews: [titleLabel, stacHorizontal])
         stac.axis = .vertical
         stac.distribution = .fill
-        stac.spacing = 5
         stac.translatesAutoresizingMaskIntoConstraints = false
         return stac
     }()
+    
+    private lazy var mainStacHorizontal: UIStackView = {
+        let stac = UIStackView(arrangedSubviews: [imageView, stacVertical])
+        stac.axis = .horizontal
+        stac.spacing = 15
+        stac.translatesAutoresizingMaskIntoConstraints = false
+        return stac
+    }()
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -56,13 +64,18 @@ class FavoriteViewCell: UIView {
     }
     
     private func setConstraints() {
-        addSubview(imageView)
-        addSubview(stacVertical)
+        addSubview(mainStacHorizontal)
+        
         NSLayoutConstraint.activate([
-            stacVertical.topAnchor.constraint(equalTo: topAnchor, constant: 18),
-            stacVertical.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 18),
-            stacVertical.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -18),
-            stacVertical.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -18),
+            imageView.widthAnchor.constraint(equalToConstant: 100),
+            imageView.heightAnchor.constraint(equalToConstant: 100),
+            
+            titleLabel.heightAnchor.constraint(equalToConstant: 30),
+            mainStacHorizontal.topAnchor.constraint(equalTo: topAnchor, constant: 18),
+            mainStacHorizontal.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 18),
+            mainStacHorizontal.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -18),
+            mainStacHorizontal.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -18),
         ])
     }
+    
 }

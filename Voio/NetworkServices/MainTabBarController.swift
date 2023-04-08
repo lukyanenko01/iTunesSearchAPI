@@ -14,6 +14,7 @@ class MainTabBarController: UITabBarController {
         super.viewDidLoad()
         configTabBar()
         viewControllers = setViewControllers()
+        addSwipeGestureRecognizers()
     }
     
     //TODO: изменить цвет UINavc
@@ -51,4 +52,27 @@ class MainTabBarController: UITabBarController {
         }
         return rootVC
     }
+    
+    private func addSwipeGestureRecognizers() {
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGesture(_:)))
+        swipeLeft.direction = .left
+        view.addGestureRecognizer(swipeLeft)
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGesture(_:)))
+        swipeRight.direction = .right
+        view.addGestureRecognizer(swipeRight)
+    }
+    
+    @objc func handleSwipeGesture(_ gesture: UISwipeGestureRecognizer) {
+        if gesture.direction == .left {
+            if selectedIndex < viewControllers!.count - 1 {
+                selectedIndex += 1
+            }
+        } else if gesture.direction == .right {
+            if selectedIndex > 0 {
+                selectedIndex -= 1
+            }
+        }
+    }
+
 }

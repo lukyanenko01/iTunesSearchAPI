@@ -16,13 +16,8 @@ class DetailsViewController: UIViewController {
         scrollView.backgroundColor = .clear
         scrollView.frame = view.bounds
         scrollView.showsVerticalScrollIndicator = false
-        scrollView.contentSize = contentSize
         return scrollView
     }()
-    
-    private var contentSize: CGSize {
-        CGSize(width: view.frame.width, height: view.frame.height+20)
-    }
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
@@ -94,7 +89,7 @@ class DetailsViewController: UIViewController {
     }()
     
     private lazy var stacVertical: UIStackView = {
-        let stac = UIStackView(arrangedSubviews: [titleLabel, stacHorizontal, ratingLabel, descriptionTextView, addFavoriteButton])
+        let stac = UIStackView(arrangedSubviews: [titleLabel, stacHorizontal, ratingLabel, descriptionTextView])
         stac.axis = .vertical
         stac.spacing = 10
         stac.translatesAutoresizingMaskIntoConstraints = false
@@ -108,8 +103,19 @@ class DetailsViewController: UIViewController {
         view.backgroundColor = UIColor(named: "custumBlack")
         setConstraints()
         addFavoriteButton.addTarget(self, action: #selector(addFavoriteButtonAction), for: .touchUpInside)
-        
     }
+    
+    func updateContentSize() {
+        DispatchQueue.main.async {
+            let contentRect = self.scrollView.subviews.reduce(into: CGRect.zero) { rect, view in
+                rect = rect.union(view.frame)
+            }
+            self.scrollView.contentSize = CGSize(width: contentRect.width, height: contentRect.height + 80)
+        }
+    }
+
+
+
     
     func setupViewController(movie: Movie) {
         self.movie = movie
@@ -118,11 +124,28 @@ class DetailsViewController: UIViewController {
         yearsLabel.text = String(movie.releaseDate.prefix(4))
         ratingLabel.text = movie.contentAdvisoryRating
         setDescriptionTextField(text: movie.longDescription ?? "N/A")
-        
+        updateContentSize()
+
         if let imageUrl = URL(string: movie.artworkUrlHighQuality) {
             imageView.sd_imageIndicator = SDWebImageActivityIndicator.medium
             imageView.sd_setImage(with: imageUrl, completed: nil)
         }
+
+    }
+    
+    func setupViewToFavoritesController(movie: MovieObject) {
+        titleLabel.text = movie.trackName
+        genreLabel.text = movie.primaryGenreName
+        yearsLabel.text = String(movie.releaseDate.prefix(4))
+        ratingLabel.text = movie.contentAdvisoryRating
+        setDescriptionTextField(text: movie.longDescription)
+        updateContentSize()
+
+        if let imageUrl = URL(string: movie.artworkUrlHighQuality) {
+            imageView.sd_imageIndicator = SDWebImageActivityIndicator.medium
+            imageView.sd_setImage(with: imageUrl, completed: nil)
+        }
+        
     }
     
     private func setDescriptionTextField(text: String) {
@@ -162,19 +185,26 @@ class DetailsViewController: UIViewController {
         view.addSubview(scrollView)
         scrollView.addSubview(imageView)
         scrollView.addSubview(stacVertical)
+        scrollView.addSubview(addFavoriteButton)
         
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 0),
             imageView.widthAnchor.constraint(equalToConstant: view.bounds.width-40),
             imageView.heightAnchor.constraint(equalToConstant: view.bounds.height/3),
             imageView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-            
+
             stacVertical.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
             stacVertical.widthAnchor.constraint(equalToConstant: view.bounds.width-40),
             stacVertical.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            
+            addFavoriteButton.topAnchor.constraint(equalTo: stacVertical.bottomAnchor, constant: 20),
+            addFavoriteButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            addFavoriteButton.widthAnchor.constraint(equalToConstant: 200),
+            addFavoriteButton.heightAnchor.constraint(equalToConstant: 40),
+            addFavoriteButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -20)
         ])
     }
-    
+
     @objc func addFavoriteButtonAction() {
         guard let favoriteMovie = movie else { return }
         saveMovieToRealm(movie: favoriteMovie)

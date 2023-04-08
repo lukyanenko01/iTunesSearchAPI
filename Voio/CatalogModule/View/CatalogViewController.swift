@@ -112,7 +112,7 @@ extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailsViewController = DetailsViewController()
         detailsViewController.setupViewController(movie: movies[indexPath.item])
-        navigationController?.pushViewController(detailsViewController, animated: true)
+        present(detailsViewController, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
