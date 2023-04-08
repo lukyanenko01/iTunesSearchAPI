@@ -26,8 +26,6 @@ class MainTabBarController: UITabBarController {
     }
     
     private func setViewControllers() -> [UIViewController]{
-//        let catalogNavVc = UINavigationController(rootViewController: CatalogViewController())
-        
         let catalogViewController = CatalogViewController()
         let movieService = MovieService()
         let catalogPresenter = CatalogPresenterImplementation(view: catalogViewController, interactor: movieService)
@@ -38,7 +36,7 @@ class MainTabBarController: UITabBarController {
         let cartNavVc = UINavigationController(rootViewController: UIViewController())
         
         let items = [
-            configureNavigationBar(catalogNavVc, title: "Сatalog", image: UIImage(systemName: "music.note")),
+            configureNavigationBar(catalogNavVc, title: "Сatalog", image: UIImage(systemName: "play.tv.fill")),
             configureNavigationBar(menuNavVc, title: "Favorites", image: UIImage(systemName: "heart.fill")),
             configureNavigationBar(cartNavVc, title: "Profile", image: UIImage(systemName: "person.fill")),
         ]

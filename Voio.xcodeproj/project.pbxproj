@@ -10,6 +10,7 @@
 		5FE9EC0612ABC6E4D7F3D5BF /* Pods_VoioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92045854129E7F6374BC731B /* Pods_VoioTests.framework */; };
 		6ED6A376E718F2F8DB315D1C /* Pods_Voio_VoioUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC803078BC7EE827B4B219AD /* Pods_Voio_VoioUITests.framework */; };
 		C8AF088EFDC07735EA4B2D15 /* Pods_Voio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D138691600E0A049AACCF7D /* Pods_Voio.framework */; };
+		F2AE955529E1948500C1636D /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AE955329E1948500C1636D /* DetailsViewController.swift */; };
 		F2EF706929E0593E003B5995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF706829E0593E003B5995 /* AppDelegate.swift */; };
 		F2EF706B29E0593E003B5995 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF706A29E0593E003B5995 /* SceneDelegate.swift */; };
 		F2EF706D29E0593E003B5995 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF706C29E0593E003B5995 /* AuthViewController.swift */; };
@@ -59,6 +60,7 @@
 		9170AECEEC326D63B56E0819 /* Pods-VoioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoioTests.release.xcconfig"; path = "Target Support Files/Pods-VoioTests/Pods-VoioTests.release.xcconfig"; sourceTree = "<group>"; };
 		92045854129E7F6374BC731B /* Pods_VoioTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoioTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC803078BC7EE827B4B219AD /* Pods_Voio_VoioUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Voio_VoioUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2AE955329E1948500C1636D /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		F2EF706529E0593E003B5995 /* Voio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2EF706829E0593E003B5995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2EF706A29E0593E003B5995 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +140,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F2AE955229E1945600C1636D /* FavoriteModule */ = {
+			isa = PBXGroup;
+			children = (
+				F2AE955329E1948500C1636D /* DetailsViewController.swift */,
+			);
+			path = FavoriteModule;
+			sourceTree = "<group>";
+		};
 		F2EF705C29E0593E003B5995 = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +178,7 @@
 				F2EF70A729E08103003B5995 /* AuthModule */,
 				F2EF70A829E08240003B5995 /* TabBar */,
 				F2EF70AB29E0863D003B5995 /* CatalogModule */,
+				F2AE955229E1945600C1636D /* FavoriteModule */,
 				F2EF709E29E06052003B5995 /* Resources */,
 			);
 			path = Voio;
@@ -539,6 +550,7 @@
 				F2EF70AA29E0830D003B5995 /* MainTabBarController.swift in Sources */,
 				F2EF706B29E0593E003B5995 /* SceneDelegate.swift in Sources */,
 				F2EF70BD29E0B363003B5995 /* CatalogPresenter.swift in Sources */,
+				F2AE955529E1948500C1636D /* DetailsViewController.swift in Sources */,
 				F2EF70A529E06E58003B5995 /* SingUpViewController.swift in Sources */,
 				F2EF70A129E061D8003B5995 /* AuthService.swift in Sources */,
 				F2EF70BA29E0B222003B5995 /* MovieService.swift in Sources */,
