@@ -7,6 +7,7 @@
 
 import UIKit
 import SDWebImage
+import RealmSwift
 
 class DetailsViewController: UIViewController {
     
@@ -100,6 +101,8 @@ class DetailsViewController: UIViewController {
         return stac
     }()
     
+    var movie: Movie?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "custumBlack")
@@ -109,12 +112,13 @@ class DetailsViewController: UIViewController {
     }
     
     func setupViewController(movie: Movie) {
+        self.movie = movie
         titleLabel.text = movie.trackName
         genreLabel.text = movie.primaryGenreName
         yearsLabel.text = String(movie.releaseDate.prefix(4))
         ratingLabel.text = movie.contentAdvisoryRating
         setDescriptionTextField(text: movie.longDescription ?? "N/A")
-
+        
         if let imageUrl = URL(string: movie.artworkUrlHighQuality) {
             imageView.sd_imageIndicator = SDWebImageActivityIndicator.medium
             imageView.sd_setImage(with: imageUrl, completed: nil)
@@ -126,12 +130,33 @@ class DetailsViewController: UIViewController {
         paragraphStyle.lineSpacing = 6
         let attributedString = NSMutableAttributedString(string: text)
         let font = UIFont(name: "Arial", size: 14) ?? UIFont.systemFont(ofSize: 14)
-
+        
         attributedString.addAttribute(.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: attributedString.length))
         attributedString.addAttribute(.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: attributedString.length))
         attributedString.addAttribute(.font, value: font, range: NSRange(location: 0, length: attributedString.length))
         descriptionTextView.attributedText = attributedString
     }
+    
+    func saveMovieToRealm(movie: Movie) {
+        let movieObject = MovieObject()
+        movieObject.trackName = movie.trackName
+        movieObject.primaryGenreName = movie.primaryGenreName
+        movieObject.releaseDate = String(movie.releaseDate.prefix(4))
+        movieObject.contentAdvisoryRating = movie.contentAdvisoryRating ?? "N/A"
+        movieObject.longDescription = movie.longDescription ?? "N/A"
+        movieObject.artworkUrlHighQuality = movie.artworkUrlHighQuality
+        
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.add(movieObject)
+            }
+        } catch {
+            print("Error saving movie to Realm: \(error.localizedDescription)")
+            //TODO: вызывать алерт
+        }
+    }
+    
     
     private func setConstraints() {
         view.addSubview(scrollView)
@@ -151,7 +176,8 @@ class DetailsViewController: UIViewController {
     }
     
     @objc func addFavoriteButtonAction() {
-        
+        guard let favoriteMovie = movie else { return }
+        saveMovieToRealm(movie: favoriteMovie)
     }
     
 }

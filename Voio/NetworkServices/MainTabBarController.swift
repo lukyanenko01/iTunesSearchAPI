@@ -32,13 +32,13 @@ class MainTabBarController: UITabBarController {
         catalogViewController.presenter = catalogPresenter
         let catalogNavVc = UINavigationController(rootViewController: catalogViewController)
 
-        let menuNavVc = UINavigationController(rootViewController: UIViewController())
-        let cartNavVc = UINavigationController(rootViewController: UIViewController())
+        let favoriteNavVc = UINavigationController(rootViewController: FavoriteViewController())
+        let profileNavVc = UINavigationController(rootViewController: UIViewController())
         
         let items = [
             configureNavigationBar(catalogNavVc, title: "Сatalog", image: UIImage(systemName: "play.tv.fill")),
-            configureNavigationBar(menuNavVc, title: "Favorites", image: UIImage(systemName: "heart.fill")),
-            configureNavigationBar(cartNavVc, title: "Profile", image: UIImage(systemName: "person.fill")),
+            configureNavigationBar(favoriteNavVc, title: "Favorites", image: UIImage(systemName: "heart.fill")),
+            configureNavigationBar(profileNavVc, title: "Profile", image: UIImage(systemName: "person.fill")),
         ]
         
         return items
