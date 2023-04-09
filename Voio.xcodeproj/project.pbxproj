@@ -23,6 +23,11 @@
 		F2D4DE8F29E2C2A9006ECCBA /* DetailsMovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DE8E29E2C2A9006ECCBA /* DetailsMovieService.swift */; };
 		F2D4DE9429E2D168006ECCBA /* Comfortaa.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2D4DE9329E2D168006ECCBA /* Comfortaa.ttf */; };
 		F2D4DE9629E2D1F6006ECCBA /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2D4DE9529E2D1F6006ECCBA /* Comfortaa-Bold.ttf */; };
+		F2D4DE9A29E2D4C3006ECCBA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DE9829E2D4C3006ECCBA /* ProfileViewController.swift */; };
+		F2D4DE9B29E2D4C3006ECCBA /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2D4DE9929E2D4C3006ECCBA /* ProfileViewController.xib */; };
+		F2D4DE9D29E2D891006ECCBA /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DE9C29E2D891006ECCBA /* PasswordValidator.swift */; };
+		F2D4DEA329E2E4D2006ECCBA /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DEA229E2E4D2006ECCBA /* FavoritePresenter.swift */; };
+		F2D4DEA529E2E4F7006ECCBA /* FavoritePresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DEA429E2E4F7006ECCBA /* FavoritePresenterImplementation.swift */; };
 		F2EF706929E0593E003B5995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF706829E0593E003B5995 /* AppDelegate.swift */; };
 		F2EF706B29E0593E003B5995 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF706A29E0593E003B5995 /* SceneDelegate.swift */; };
 		F2EF706D29E0593E003B5995 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF706C29E0593E003B5995 /* AuthViewController.swift */; };
@@ -84,6 +89,11 @@
 		F2D4DE8E29E2C2A9006ECCBA /* DetailsMovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsMovieService.swift; sourceTree = "<group>"; };
 		F2D4DE9329E2D168006ECCBA /* Comfortaa.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Comfortaa.ttf; sourceTree = "<group>"; };
 		F2D4DE9529E2D1F6006ECCBA /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
+		F2D4DE9829E2D4C3006ECCBA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F2D4DE9929E2D4C3006ECCBA /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		F2D4DE9C29E2D891006ECCBA /* PasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
+		F2D4DEA229E2E4D2006ECCBA /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
+		F2D4DEA429E2E4F7006ECCBA /* FavoritePresenterImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenterImplementation.swift; sourceTree = "<group>"; };
 		F2EF706529E0593E003B5995 /* Voio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2EF706829E0593E003B5995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2EF706A29E0593E003B5995 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -168,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				F2D4DE8929E2BB61006ECCBA /* View */,
+				F2D4DE9129E2C397006ECCBA /* Presenter */,
 			);
 			path = DetailsModule;
 			sourceTree = "<group>";
@@ -175,10 +186,9 @@
 		F2AE955729E1A64C00C1636D /* FavoriteModule */ = {
 			isa = PBXGroup;
 			children = (
-				F2AE955829E1A76600C1636D /* FavoriteViewController.swift */,
-				F2AE956229E1AA2400C1636D /* FavoriteTableViewCell.swift */,
-				F2AE955E29E1A7F000C1636D /* FavoriteViewCell.swift */,
-				F2AE956429E1ABD700C1636D /* MovieObject.swift */,
+				F2D4DEA129E2E4BA006ECCBA /* Model */,
+				F2D4DE9E29E2E484006ECCBA /* View */,
+				F2D4DEA029E2E4B0006ECCBA /* Presenter */,
 			);
 			path = FavoriteModule;
 			sourceTree = "<group>";
@@ -187,7 +197,6 @@
 			isa = PBXGroup;
 			children = (
 				F2AE955329E1948500C1636D /* DetailsViewController.swift */,
-				F2D4DE9129E2C397006ECCBA /* Presenter */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -196,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				F2D4DE8E29E2C2A9006ECCBA /* DetailsMovieService.swift */,
+				F2D4DE9C29E2D891006ECCBA /* PasswordValidator.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -215,6 +225,59 @@
 				F2AE956029E1A85600C1636D /* UILabelExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F2D4DE9729E2D48B006ECCBA /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				F2D4DE9329E2D168006ECCBA /* Comfortaa.ttf */,
+				F2D4DE9529E2D1F6006ECCBA /* Comfortaa-Bold.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		F2D4DE9E29E2E484006ECCBA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F2D4DE9F29E2E497006ECCBA /* Cell */,
+				F2AE955829E1A76600C1636D /* FavoriteViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F2D4DE9F29E2E497006ECCBA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F2AE956229E1AA2400C1636D /* FavoriteTableViewCell.swift */,
+				F2AE955E29E1A7F000C1636D /* FavoriteViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F2D4DEA029E2E4B0006ECCBA /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F2D4DEA229E2E4D2006ECCBA /* FavoritePresenter.swift */,
+				F2D4DEA429E2E4F7006ECCBA /* FavoritePresenterImplementation.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F2D4DEA129E2E4BA006ECCBA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F2AE956429E1ABD700C1636D /* MovieObject.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F2D4DEA629E2E55C006ECCBA /* ProfileModule */ = {
+			isa = PBXGroup;
+			children = (
+				F2D4DE9829E2D4C3006ECCBA /* ProfileViewController.swift */,
+				F2D4DE9929E2D4C3006ECCBA /* ProfileViewController.xib */,
+			);
+			path = ProfileModule;
 			sourceTree = "<group>";
 		};
 		F2EF705C29E0593E003B5995 = {
@@ -250,6 +313,7 @@
 				F2EF70AB29E0863D003B5995 /* CatalogModule */,
 				F2AE955229E1945600C1636D /* DetailsModule */,
 				F2AE955729E1A64C00C1636D /* FavoriteModule */,
+				F2D4DEA629E2E55C006ECCBA /* ProfileModule */,
 				F2D4DE9229E2C530006ECCBA /* Extensions */,
 				F2EF709E29E06052003B5995 /* Resources */,
 			);
@@ -286,8 +350,7 @@
 		F2EF709E29E06052003B5995 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F2D4DE9329E2D168006ECCBA /* Comfortaa.ttf */,
-				F2D4DE9529E2D1F6006ECCBA /* Comfortaa-Bold.ttf */,
+				F2D4DE9729E2D48B006ECCBA /* Font */,
 				F2AE956B29E1DD8200C1636D /* favorites.json */,
 				F2EF707129E05940003B5995 /* Assets.xcassets */,
 				F2EF707329E05940003B5995 /* LaunchScreen.storyboard */,
@@ -488,6 +551,7 @@
 			files = (
 				F2EF70B329E087E6003B5995 /* CatalogCollectionViewCell.xib in Resources */,
 				F2D4DE9429E2D168006ECCBA /* Comfortaa.ttf in Resources */,
+				F2D4DE9B29E2D4C3006ECCBA /* ProfileViewController.xib in Resources */,
 				F2EF707529E05940003B5995 /* LaunchScreen.storyboard in Resources */,
 				F2EF707229E05940003B5995 /* Assets.xcassets in Resources */,
 				F2EF709929E05EC5003B5995 /* GoogleService-Info.plist in Resources */,
@@ -622,6 +686,7 @@
 			files = (
 				F2EF70AD29E0865F003B5995 /* CatalogViewController.swift in Sources */,
 				F2EF70B229E087E6003B5995 /* CatalogCollectionViewCell.swift in Sources */,
+				F2D4DEA329E2E4D2006ECCBA /* FavoritePresenter.swift in Sources */,
 				F2AE956129E1A85600C1636D /* UILabelExtension.swift in Sources */,
 				F2EF706D29E0593E003B5995 /* AuthViewController.swift in Sources */,
 				F2EF70A329E06387003B5995 /* CustomNavigationController.swift in Sources */,
@@ -631,13 +696,16 @@
 				F2EF70B629E0AFDF003B5995 /* Movie.swift in Sources */,
 				F2D4DE8D29E2C28C006ECCBA /* DetailsPresenterImplementation.swift in Sources */,
 				F2EF70BF29E0B4FE003B5995 /* CatalogPresenterImplementation.swift in Sources */,
+				F2D4DEA529E2E4F7006ECCBA /* FavoritePresenterImplementation.swift in Sources */,
 				F2EF706929E0593E003B5995 /* AppDelegate.swift in Sources */,
 				F2AE956529E1ABD700C1636D /* MovieObject.swift in Sources */,
 				F2D4DE8F29E2C2A9006ECCBA /* DetailsMovieService.swift in Sources */,
 				F2EF70AA29E0830D003B5995 /* MainTabBarController.swift in Sources */,
+				F2D4DE9A29E2D4C3006ECCBA /* ProfileViewController.swift in Sources */,
 				F2EF706B29E0593E003B5995 /* SceneDelegate.swift in Sources */,
 				F2EF70BD29E0B363003B5995 /* CatalogPresenter.swift in Sources */,
 				F2AE956329E1AA2400C1636D /* FavoriteTableViewCell.swift in Sources */,
+				F2D4DE9D29E2D891006ECCBA /* PasswordValidator.swift in Sources */,
 				F2AE955529E1948500C1636D /* DetailsViewController.swift in Sources */,
 				F2EF70A529E06E58003B5995 /* SingUpViewController.swift in Sources */,
 				F2EF70A129E061D8003B5995 /* AuthService.swift in Sources */,

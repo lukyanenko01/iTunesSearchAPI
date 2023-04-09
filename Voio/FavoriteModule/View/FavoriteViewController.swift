@@ -9,8 +9,7 @@ import UIKit
 import RealmSwift
 import Lottie
 
-
-class FavoriteViewController: UIViewController {
+class FavoriteViewController: UIViewController, FavoriteView {
     
     var tableView = UITableView()
     
@@ -30,13 +29,30 @@ class FavoriteViewController: UIViewController {
         return stac
     }()
     
-    private let realm = try! Realm()
+    private lazy var realm: Realm = {
+        return try! Realm()
+    }()
     
     private var movies: Results<MovieObject>?
+    
+    private let interactor: FavoriteInteractor
+    var presenter: FavoritePresenter!
+    
+    init(interactor: FavoriteInteractor) {
+        self.interactor = interactor
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         movies = realm.objects(MovieObject.self)
+        
+        presenter = FavoritePresenterImplementation(view: self, interactor: interactor)
+        presenter.viewDidLoad()
         
         configureView()
         configTable()
@@ -46,8 +62,22 @@ class FavoriteViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        presenter.viewWillAppear()
+        
+    }
+    
+    func setLoadingIndicator(isLoading: Bool) {
+        //TODO: setLoadingIndicator
+    }
+    
+    func updateMovies(movies: Results<MovieObject>?) {
+        self.movies = movies
         tableView.reloadData()
         updateEmptyCartViewVisibility()
+    }
+    
+    func showError(error: Error) {
+        print("Error: \(error.localizedDescription)")
     }
     
     private func lottieViewAnimation() {
@@ -107,6 +137,7 @@ class FavoriteViewController: UIViewController {
 }
 
 extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies?.count ?? 8
     }
@@ -119,42 +150,21 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            do {
-                let realm = try Realm()
-                guard let movie = movies?[indexPath.row] else { return }
-                
-                try realm.write {
-                    realm.delete(movie)
-                }
-                
-                self.tableView.reloadData()
-                updateEmptyCartViewVisibility()
-                
-            } catch {
-                print("Error deleting movie from Realm: \(error.localizedDescription)")
-            }
+            presenter.deleteMovie(at: indexPath)
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        guard let movie = movies?[indexPath.row] else { return }
-        
-        let detailsViewController = DetailsViewController()
-        detailsViewController.delegate = self
-        detailsViewController.setupViewToFavoritesController(movie: movie)
-        present(detailsViewController, animated: true)
+        presenter.didSelectMovie(at: indexPath)
     }
     
 }
 
 extension FavoriteViewController: DetailsViewControllerDelegate {
     func didUpdateFavorite(movie: Movie) {
-        fetchFavorites()
-        updateEmptyCartViewVisibility()
-        tableView.reloadData()
+        presenter.viewWillAppear()
     }
 }

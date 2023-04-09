@@ -81,6 +81,8 @@ class SingUpViewController: UIViewController {
     var isLoginMode = false
     private var viewBacgraundHeightConstraint: NSLayoutConstraint?
     private let authService = AuthService()
+    private let passwordValidator = PasswordValidator()
+    private let minLength = 8
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,6 +93,9 @@ class SingUpViewController: UIViewController {
         if isLoginMode {
             configureForLogin()
         }
+        
+        let tapHideKeyboard = UITapGestureRecognizer(target: self, action: #selector(tapHideKeyboardAction))
+        view.addGestureRecognizer(tapHideKeyboard)
     }
     
     func configureForLogin() {
@@ -157,6 +162,12 @@ class SingUpViewController: UIViewController {
             stacVertical.leadingAnchor.constraint(equalTo: viewBacgraund.leadingAnchor, constant: 20),
             stacVertical.trailingAnchor.constraint(equalTo: viewBacgraund.trailingAnchor, constant: -20)
         ])
+    }
+    
+    @objc private func tapHideKeyboardAction(_ sender: UITapGestureRecognizer) {
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        curentPasswordTextField.resignFirstResponder()
     }
     
     @objc func enterAction() {

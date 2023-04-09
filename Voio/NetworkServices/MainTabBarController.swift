@@ -27,14 +27,19 @@ class MainTabBarController: UITabBarController {
     }
     
     private func setViewControllers() -> [UIViewController]{
+        
         let catalogViewController = CatalogViewController()
         let movieService = MovieService()
         let catalogPresenter = CatalogPresenterImplementation(view: catalogViewController, interactor: movieService)
         catalogViewController.presenter = catalogPresenter
         let catalogNavVc = UINavigationController(rootViewController: catalogViewController)
         
-        let favoriteNavVc = UINavigationController(rootViewController: FavoriteViewController())
-        let profileNavVc = UINavigationController(rootViewController: UIViewController())
+        
+        let favoriteInteractor = FavoriteInteractorImplementation()
+        let favoriteViewController = FavoriteViewController(interactor: favoriteInteractor)
+        let favoriteNavVc = UINavigationController(rootViewController: favoriteViewController)
+        
+        let profileNavVc = UINavigationController(rootViewController: ProfileViewController())
         
         let items = [
             configureNavigationBar(catalogNavVc, title: "Сatalog", image: UIImage(systemName: "play.tv.fill")),
