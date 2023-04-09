@@ -13,8 +13,7 @@ protocol DetailsViewControllerDelegate: AnyObject {
     func didUpdateFavorite(movie: Movie)
 }
 
-
-class DetailsViewController: UIViewController {
+class DetailsViewController: UIViewController, DetailsView {
     
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -106,9 +105,11 @@ class DetailsViewController: UIViewController {
         return stac
     }()
     
-    var movie: Movie?
+    private var movie: Movie?
     
     weak var delegate: DetailsViewControllerDelegate?
+    
+    private var presenter: DetailsPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,8 +118,7 @@ class DetailsViewController: UIViewController {
         addFavoriteButton.addTarget(self, action: #selector(addFavoriteButtonAction), for: .touchUpInside)
     }
     
-    func setupViewController(movie: Movie) {
-        self.movie = movie
+    func setupView(with movie: Movie) {
         titleLabel.text = movie.trackName
         genreLabel.text = movie.primaryGenreName
         yearsLabel.text = String(movie.releaseDate.prefix(4))
@@ -130,25 +130,8 @@ class DetailsViewController: UIViewController {
             imageView.sd_setImage(with: imageUrl, completed: nil)
         }
         
-        updateFavoriteButton(movieInFavorites: isMovieInFavorites(trackId: movie.trackId))
+        updateFavoriteButton(movieInFavorites: presenter.isMovieInFavorites(trackId: movie.trackId))
     }
-    
-    func setupViewToFavoritesController(movie: MovieObject) {
-        self.movie = Movie(movieObject: movie)
-        titleLabel.text = movie.trackName
-        genreLabel.text = movie.primaryGenreName
-        yearsLabel.text = String(movie.releaseDate.prefix(4))
-        ratingLabel.text = movie.contentAdvisoryRating
-        setDescriptionTextField(text: movie.longDescription)
-        
-        if let imageUrl = URL(string: movie.artworkUrlHighQuality) {
-            imageView.sd_imageIndicator = SDWebImageActivityIndicator.medium
-            imageView.sd_setImage(with: imageUrl, completed: nil)
-        }
-        
-        updateFavoriteButton(movieInFavorites: isMovieInFavorites(trackId: movie.trackId))
-    }
-    
     
     func updateFavoriteButton(movieInFavorites: Bool) {
         if movieInFavorites {
@@ -160,6 +143,31 @@ class DetailsViewController: UIViewController {
             addFavoriteButton.setTitle("Add to Favorites", for: .normal)
             addFavoriteButton.setTitleColor(.white, for: .normal)
         }
+    }
+    
+    func setupViewController(movie: Movie) {
+        self.movie = movie
+        let movieService = DetailsMovieService()
+        presenter = DetailsPresenterImplementation(view: self, movie: movie, movieService: movieService)
+        presenter.viewDidLoad()
+    }
+    
+    func setupViewToFavoritesController(movie: MovieObject) {
+        self.movie = Movie(movieObject: movie)
+        let movieService = DetailsMovieService()
+        presenter = DetailsPresenterImplementation(view: self, movie: self.movie!, movieService: movieService)
+        titleLabel.text = movie.trackName
+        genreLabel.text = movie.primaryGenreName
+        yearsLabel.text = String(movie.releaseDate.prefix(4))
+        ratingLabel.text = movie.contentAdvisoryRating
+        setDescriptionTextField(text: movie.longDescription)
+        
+        if let imageUrl = URL(string: movie.artworkUrlHighQuality) {
+            imageView.sd_imageIndicator = SDWebImageActivityIndicator.medium
+            imageView.sd_setImage(with: imageUrl, completed: nil)
+        }
+        
+        updateFavoriteButton(movieInFavorites: presenter.isMovieInFavorites(trackId: movie.trackId))
     }
     
     private func setDescriptionTextField(text: String) {
@@ -174,40 +182,6 @@ class DetailsViewController: UIViewController {
         descriptionTextView.attributedText = attributedString
     }
     
-    func saveMovieToRealm(movie: Movie) {
-        let movieObject = MovieObject()
-        movieObject.trackName = movie.trackName
-        movieObject.primaryGenreName = movie.primaryGenreName
-        movieObject.releaseDate = String(movie.releaseDate.prefix(4))
-        movieObject.contentAdvisoryRating = movie.contentAdvisoryRating ?? "N/A"
-        movieObject.longDescription = movie.longDescription ?? "N/A"
-        movieObject.artworkUrlHighQuality = movie.artworkUrlHighQuality
-        movieObject.trackId = movie.trackId
-        do {
-            let realm = try Realm()
-            try realm.write {
-                realm.add(movieObject)
-            }
-        } catch {
-            print("Error saving movie to Realm: \(error.localizedDescription)")
-            //TODO: вызывать алерт
-        }
-    }
-    
-    func isMovieInFavorites(trackId: Int) -> Bool {
-        do {
-            let realm = try Realm()
-            let movieObject = realm.objects(MovieObject.self).filter("trackId = %@", trackId).first
-            return movieObject != nil
-        } catch {
-            //TODO: alert
-            print("Error checking movie in Realm: \(error.localizedDescription)")
-            return false
-        }
-    }
-    
-    
-    
     private func setConstraints() {
         view.addSubview(scrollView)
         scrollView.addSubview(imageView)
@@ -221,38 +195,20 @@ class DetailsViewController: UIViewController {
             
             stacVertical.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 40),
             stacVertical.widthAnchor.constraint(equalToConstant: view.bounds.width-40),
-            stacVertical.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-            addFavoriteButton.widthAnchor.constraint(equalToConstant: view.bounds.width/2)
+            stacVertical.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor)
         ])
+        
+        let widthConstraint = addFavoriteButton.widthAnchor.constraint(equalToConstant: view.bounds.width/2)
+        widthConstraint.priority = UILayoutPriority(rawValue: 999)
+        widthConstraint.isActive = true
     }
     
     @objc func addFavoriteButtonAction() {
-        guard let favoriteMovie = movie else { return }
-        let movieInFavorites = isMovieInFavorites(trackId: favoriteMovie.trackId)
-        
-        if movieInFavorites {
-            deleteMovieFromRealm(trackId: favoriteMovie.trackId)
-        } else {
-            saveMovieToRealm(movie: favoriteMovie)
+        presenter.toggleFavoriteButton()
+        if let movies = movie {
+            delegate?.didUpdateFavorite(movie: movies)
         }
-        
-        updateFavoriteButton(movieInFavorites: !movieInFavorites)
-        delegate?.didUpdateFavorite(movie: favoriteMovie)
         dismiss(animated: true)
     }
     
-    func deleteMovieFromRealm(trackId: Int) {
-        do {
-            let realm = try Realm()
-            if let movieObject = realm.objects(MovieObject.self).filter("trackId = %@", trackId).first {
-                try realm.write {
-                    realm.delete(movieObject)
-                }
-            }
-        } catch {
-            print("Error deleting movie from Realm: \(error.localizedDescription)")
-        }
-    }
-    
 }
-

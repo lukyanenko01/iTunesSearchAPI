@@ -10,6 +10,8 @@ import SDWebImage
 
 class CatalogViewController: UIViewController, CatalogView {
     
+    var presenter: CatalogPresenter!
+    
     private let activityIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(style: .large)
         indicator.color = .white
@@ -24,11 +26,9 @@ class CatalogViewController: UIViewController, CatalogView {
     private var movies: [Movie] = []
     
     private let movieService = MovieService()
-    
-    var presenter: CatalogPresenter!
-    
+        
     private let customNavigationControllerDelegate = CustomNavigationControllerDelegate()
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,13 +107,11 @@ extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CatalogCollectionViewCell.id, for: indexPath) as? CatalogCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.setupCell(movie: movies[indexPath.item]) 
+        cell.setupCell(movie: movies[indexPath.item])
         
         return cell
     }
-    
-    
-    
+        
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailsViewController = DetailsViewController()
         detailsViewController.setupViewController(movie: movies[indexPath.item])

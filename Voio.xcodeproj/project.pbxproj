@@ -18,6 +18,9 @@
 		F2AE956529E1ABD700C1636D /* MovieObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AE956429E1ABD700C1636D /* MovieObject.swift */; };
 		F2AE956A29E1DA6100C1636D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F2AE956929E1DA6100C1636D /* Lottie */; };
 		F2AE956C29E1DD8200C1636D /* favorites.json in Resources */ = {isa = PBXBuildFile; fileRef = F2AE956B29E1DD8200C1636D /* favorites.json */; };
+		F2D4DE8B29E2C24B006ECCBA /* DetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DE8A29E2C24B006ECCBA /* DetailsPresenter.swift */; };
+		F2D4DE8D29E2C28C006ECCBA /* DetailsPresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DE8C29E2C28C006ECCBA /* DetailsPresenterImplementation.swift */; };
+		F2D4DE8F29E2C2A9006ECCBA /* DetailsMovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DE8E29E2C2A9006ECCBA /* DetailsMovieService.swift */; };
 		F2EF706929E0593E003B5995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF706829E0593E003B5995 /* AppDelegate.swift */; };
 		F2EF706B29E0593E003B5995 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF706A29E0593E003B5995 /* SceneDelegate.swift */; };
 		F2EF706D29E0593E003B5995 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF706C29E0593E003B5995 /* AuthViewController.swift */; };
@@ -74,6 +77,9 @@
 		F2AE956229E1AA2400C1636D /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		F2AE956429E1ABD700C1636D /* MovieObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieObject.swift; sourceTree = "<group>"; };
 		F2AE956B29E1DD8200C1636D /* favorites.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = favorites.json; sourceTree = "<group>"; };
+		F2D4DE8A29E2C24B006ECCBA /* DetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenter.swift; sourceTree = "<group>"; };
+		F2D4DE8C29E2C28C006ECCBA /* DetailsPresenterImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenterImplementation.swift; sourceTree = "<group>"; };
+		F2D4DE8E29E2C2A9006ECCBA /* DetailsMovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsMovieService.swift; sourceTree = "<group>"; };
 		F2EF706529E0593E003B5995 /* Voio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2EF706829E0593E003B5995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2EF706A29E0593E003B5995 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -177,8 +183,26 @@
 			isa = PBXGroup;
 			children = (
 				F2AE955329E1948500C1636D /* DetailsViewController.swift */,
+				F2D4DE9129E2C397006ECCBA /* Presenter */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F2D4DE9029E2C2B4006ECCBA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F2D4DE8E29E2C2A9006ECCBA /* DetailsMovieService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F2D4DE9129E2C397006ECCBA /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F2D4DE8A29E2C24B006ECCBA /* DetailsPresenter.swift */,
+				F2D4DE8C29E2C28C006ECCBA /* DetailsPresenterImplementation.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		F2EF705C29E0593E003B5995 = {
@@ -208,6 +232,7 @@
 			children = (
 				F2EF709D29E0603B003B5995 /* Application */,
 				F2EF709F29E061C1003B5995 /* NetworkServices */,
+				F2D4DE9029E2C2B4006ECCBA /* Services */,
 				F2EF70A729E08103003B5995 /* AuthModule */,
 				F2EF70A829E08240003B5995 /* TabBar */,
 				F2EF70AB29E0863D003B5995 /* CatalogModule */,
@@ -586,10 +611,13 @@
 				F2EF70A329E06387003B5995 /* CustomNavigationController.swift in Sources */,
 				F2AE955929E1A76600C1636D /* FavoriteViewController.swift in Sources */,
 				F2AE955F29E1A7F000C1636D /* FavoriteViewCell.swift in Sources */,
+				F2D4DE8B29E2C24B006ECCBA /* DetailsPresenter.swift in Sources */,
 				F2EF70B629E0AFDF003B5995 /* Movie.swift in Sources */,
+				F2D4DE8D29E2C28C006ECCBA /* DetailsPresenterImplementation.swift in Sources */,
 				F2EF70BF29E0B4FE003B5995 /* CatalogPresenterImplementation.swift in Sources */,
 				F2EF706929E0593E003B5995 /* AppDelegate.swift in Sources */,
 				F2AE956529E1ABD700C1636D /* MovieObject.swift in Sources */,
+				F2D4DE8F29E2C2A9006ECCBA /* DetailsMovieService.swift in Sources */,
 				F2EF70AA29E0830D003B5995 /* MainTabBarController.swift in Sources */,
 				F2EF706B29E0593E003B5995 /* SceneDelegate.swift in Sources */,
 				F2EF70BD29E0B363003B5995 /* CatalogPresenter.swift in Sources */,
