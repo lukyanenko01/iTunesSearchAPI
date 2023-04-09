@@ -1,5 +1,5 @@
 //
-//  AuthService.swift
+//  AuthManager.swift
 //  Voio
 //
 //  Created by Vladimir Lukyanenko on 07.04.2023.
@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseAuth
 
-final class AuthService {
+final class AuthManager {
     
     func createUser(email: String, password: String, confirmPassword: String, completion: @escaping (Result<Void, Error>) -> Void) {
         guard !email.isEmpty, !password.isEmpty, !confirmPassword.isEmpty else {

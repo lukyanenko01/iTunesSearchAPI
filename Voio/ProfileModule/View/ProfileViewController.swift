@@ -7,11 +7,11 @@
 
 import UIKit
 import FirebaseAuth
-import FirebaseFirestore
-import FirebaseStorage
-import SDWebImage
+//import FirebaseFirestore
+//import FirebaseStorage
+//import SDWebImage
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, ProfileView {
     
     let imageView: UIImageView = {
         let imageView = UIImageView()
@@ -74,20 +74,49 @@ class ProfileViewController: UIViewController {
     
     private var bottomConstraint: NSLayoutConstraint?
     
+    private var presenter: ProfilePresenter!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "custumBlack")
         title = "Profile"
         setConstraints()
         
-        loadProfileDataFromFirestore()
+        presenter = ProfilePresenterImplementation(view: self)
+        presenter.loadProfileData()
         
         nameTextField.delegate = self
         lastNameTextField.delegate = self
         
-        NotificationCenter.default.addObserver(self, selector: #selector(saveProfileDataToFirestore), name: UIApplication.willResignActiveNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(saveProfileDataToFirestore), name: UIApplication.willTerminateNotification, object: nil)
+        NotificationCenterAndAction()        
         
+    }
+    
+    func showProfileData(_ userProfile: UserProfile) {
+        nameTextField.text = userProfile.name
+        lastNameTextField.text = userProfile.lastName
+    }
+    
+    func showError(_ error: Error) {
+        //TODO: алерт с ошибкой
+    }
+    
+    func showProfileImage(_ image: UIImage) {
+        DispatchQueue.main.async {
+            self.imageView.image = image
+            
+        }
+    }
+    
+    func uploadProfileImageToStorage(completion: @escaping (Result<URL, Error>) -> Void) {
+        guard let image = imageView.image else { return }
+        
+        FirebaseStorageManager.shared.uploadProfileImage(image) { result in
+            completion(result)
+        }
+    }
+    
+    private func NotificationCenterAndAction() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
@@ -98,70 +127,6 @@ class ProfileViewController: UIViewController {
         view.addGestureRecognizer(tapHideKeyboard)
         
         buttonEnter.addTarget(self, action: #selector(exitAction), for: .touchUpInside)
-        
-    }
-    
-    func loadProfileDataFromFirestore() {
-        FirestoreManager.shared.loadProfileData { [weak self] result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let userProfile):
-                    self?.nameTextField.text = userProfile.name
-                    self?.lastNameTextField.text = userProfile.lastName
-                    if let url = URL(string: userProfile.profileImageURL) {
-                        self?.downloadProfileImageFromStorage(url: url)
-                    }
-                case .failure(let error):
-                    print("Error getting user data from Firestore: \(error.localizedDescription)")
-                }
-            }
-        }
-    }
-    
-    
-    
-    @objc func saveProfileDataToFirestore() {
-        guard let name = nameTextField.text, let lastName = lastNameTextField.text else { return }
-        
-        uploadProfileImageToStorage { result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let imageURL):
-                    let userProfile = UserProfile(name: name, lastName: lastName, profileImageURL: imageURL.absoluteString)
-                    
-                    FirestoreManager.shared.saveProfileData(userProfile) { error in
-                        if let error = error {
-                            print("Error saving user data to Firestore: \(error)")
-                        } else {
-                            print("User data successfully saved to Firestore")
-                        }
-                    }
-                case .failure(let error):
-                    print("Error uploading profile image to Firebase Storage: \(error)")
-                }
-            }
-        }
-    }
-    
-    
-    func uploadProfileImageToStorage(completion: @escaping (Result<URL, Error>) -> Void) {
-        guard let image = imageView.image else { return }
-        
-        FirebaseStorageManager.shared.uploadProfileImage(image) { result in
-            completion(result)
-        }
-    }
-    
-    func downloadProfileImageFromStorage(url: URL) {
-        let indicator = SDWebImageActivityIndicator.white
-        imageView.sd_imageIndicator = indicator
-        imageView.sd_setImage(with: url, placeholderImage: nil, options: .highPriority) { (image, error, _, _) in
-            if let error = error {
-                print("Error downloading profile image from Firebase Storage: \(error)")
-            } else {
-                self.imageView.image = image
-            }
-        }
     }
     
     private func setConstraints() {
@@ -244,7 +209,8 @@ extension ProfileViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        saveProfileDataToFirestore()
+        guard let name = nameTextField.text, let lastName = lastNameTextField.text, let image = imageView.image else { return }
+        presenter.saveProfileData(name: name, lastName: lastName, image: image)
     }
 }
 
@@ -253,13 +219,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true)
         guard let image = info[.originalImage] as? UIImage else { return }
-        imageView.image = image
-        
-        if let imageData = image.pngData() {
-            let defaults = UserDefaults.standard
-            defaults.set(imageData, forKey: "savedImage")
-        }
-        saveProfileDataToFirestore()
+        presenter.handleImageSelection(image: image)
     }
     
     
@@ -268,9 +228,3 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     }
     
 }
-
-
-
-
-
-

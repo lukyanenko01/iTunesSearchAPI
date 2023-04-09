@@ -25,7 +25,7 @@ class CatalogViewController: UIViewController, CatalogView {
     
     private var movies: [Movie] = []
     
-    private let movieService = MovieService()
+    private let movieService = MovieManager()
         
     private let customNavigationControllerDelegate = CustomNavigationControllerDelegate()
     

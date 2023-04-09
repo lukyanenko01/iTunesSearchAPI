@@ -32,11 +32,15 @@ class FirestoreManager {
         }
     }
     
-    func saveProfileData(_ userProfile: UserProfile, completion: @escaping (Error?) -> Void) {
+    func saveProfileData(_ userProfile: UserProfile, completion: @escaping (Result<Void, Error>) -> Void) {
         guard let userID = Auth.auth().currentUser?.uid else { return }
         
         db.collection("users").document(userID).setData(userProfile.dictionary) { error in
-            completion(error)
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(()))
+            }
         }
     }
 }

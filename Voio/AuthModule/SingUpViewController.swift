@@ -80,7 +80,7 @@ class SingUpViewController: UIViewController {
     
     var isLoginMode = false
     private var viewBacgraundHeightConstraint: NSLayoutConstraint?
-    private let authService = AuthService()
+    private let authService = AuthManager()
     private let passwordValidator = PasswordValidator()
     private let minLength = 8
     

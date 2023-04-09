@@ -29,7 +29,7 @@ class MainTabBarController: UITabBarController {
     private func setViewControllers() -> [UIViewController]{
         
         let catalogViewController = CatalogViewController()
-        let movieService = MovieService()
+        let movieService = MovieManager()
         let catalogPresenter = CatalogPresenterImplementation(view: catalogViewController, interactor: movieService)
         catalogViewController.presenter = catalogPresenter
         let catalogNavVc = UINavigationController(rootViewController: catalogViewController)

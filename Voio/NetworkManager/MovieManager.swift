@@ -1,5 +1,5 @@
 //
-//  MovieService.swift
+//  MovieManager.swift
 //  Voio
 //
 //  Created by Vladimir Lukyanenko on 07.04.2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MovieService: CatalogInteractor {
+class MovieManager: CatalogInteractor {
     
     private let recommendedGenres = ["Action", "Comedy", "Adventure", "Horror", "Sci-Fi", "Drama", "Animation", "Thriller"]
     

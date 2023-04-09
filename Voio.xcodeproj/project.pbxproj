@@ -34,6 +34,8 @@
 		F2D4DEB129E34AE0006ECCBA /* FirebaseStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DEB029E34AE0006ECCBA /* FirebaseStorageManager.swift */; };
 		F2D4DEB329E34B15006ECCBA /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DEB229E34B15006ECCBA /* UserProfile.swift */; };
 		F2D4DEB829E34D3D006ECCBA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DEB729E34D3D006ECCBA /* MainTabBarController.swift */; };
+		F2D4DEBC29E35405006ECCBA /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DEBB29E35405006ECCBA /* ProfilePresenter.swift */; };
+		F2D4DEBE29E3543D006ECCBA /* ProfilePresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DEBD29E3543D006ECCBA /* ProfilePresenterImplementation.swift */; };
 		F2EF706929E0593E003B5995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF706829E0593E003B5995 /* AppDelegate.swift */; };
 		F2EF706B29E0593E003B5995 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF706A29E0593E003B5995 /* SceneDelegate.swift */; };
 		F2EF706D29E0593E003B5995 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF706C29E0593E003B5995 /* AuthViewController.swift */; };
@@ -43,14 +45,14 @@
 		F2EF708A29E05940003B5995 /* VoioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF708929E05940003B5995 /* VoioUITests.swift */; };
 		F2EF708C29E05940003B5995 /* VoioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF708B29E05940003B5995 /* VoioUITestsLaunchTests.swift */; };
 		F2EF709929E05EC5003B5995 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2EF709829E05EC5003B5995 /* GoogleService-Info.plist */; };
-		F2EF70A129E061D8003B5995 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70A029E061D8003B5995 /* AuthService.swift */; };
+		F2EF70A129E061D8003B5995 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70A029E061D8003B5995 /* AuthManager.swift */; };
 		F2EF70A329E06387003B5995 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70A229E06387003B5995 /* CustomNavigationController.swift */; };
 		F2EF70A529E06E58003B5995 /* SingUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70A429E06E58003B5995 /* SingUpViewController.swift */; };
 		F2EF70AD29E0865F003B5995 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70AC29E0865F003B5995 /* CatalogViewController.swift */; };
 		F2EF70B229E087E6003B5995 /* CatalogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70B029E087E6003B5995 /* CatalogCollectionViewCell.swift */; };
 		F2EF70B329E087E6003B5995 /* CatalogCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2EF70B129E087E6003B5995 /* CatalogCollectionViewCell.xib */; };
 		F2EF70B629E0AFDF003B5995 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70B529E0AFDF003B5995 /* Movie.swift */; };
-		F2EF70BA29E0B222003B5995 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70B929E0B222003B5995 /* MovieService.swift */; };
+		F2EF70BA29E0B222003B5995 /* MovieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70B929E0B222003B5995 /* MovieManager.swift */; };
 		F2EF70BD29E0B363003B5995 /* CatalogPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70BC29E0B363003B5995 /* CatalogPresenter.swift */; };
 		F2EF70BF29E0B4FE003B5995 /* CatalogPresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70BE29E0B4FD003B5995 /* CatalogPresenterImplementation.swift */; };
 /* End PBXBuildFile section */
@@ -101,6 +103,8 @@
 		F2D4DEB029E34AE0006ECCBA /* FirebaseStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageManager.swift; sourceTree = "<group>"; };
 		F2D4DEB229E34B15006ECCBA /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		F2D4DEB729E34D3D006ECCBA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		F2D4DEBB29E35405006ECCBA /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		F2D4DEBD29E3543D006ECCBA /* ProfilePresenterImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenterImplementation.swift; sourceTree = "<group>"; };
 		F2EF706529E0593E003B5995 /* Voio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2EF706829E0593E003B5995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2EF706A29E0593E003B5995 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,14 +118,14 @@
 		F2EF708929E05940003B5995 /* VoioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoioUITests.swift; sourceTree = "<group>"; };
 		F2EF708B29E05940003B5995 /* VoioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoioUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F2EF709829E05EC5003B5995 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		F2EF70A029E061D8003B5995 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		F2EF70A029E061D8003B5995 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		F2EF70A229E06387003B5995 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		F2EF70A429E06E58003B5995 /* SingUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewController.swift; sourceTree = "<group>"; };
 		F2EF70AC29E0865F003B5995 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
 		F2EF70B029E087E6003B5995 /* CatalogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCollectionViewCell.swift; sourceTree = "<group>"; };
 		F2EF70B129E087E6003B5995 /* CatalogCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatalogCollectionViewCell.xib; sourceTree = "<group>"; };
 		F2EF70B529E0AFDF003B5995 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
-		F2EF70B929E0B222003B5995 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
+		F2EF70B929E0B222003B5995 /* MovieManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieManager.swift; sourceTree = "<group>"; };
 		F2EF70BC29E0B363003B5995 /* CatalogPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogPresenter.swift; sourceTree = "<group>"; };
 		F2EF70BE29E0B4FD003B5995 /* CatalogPresenterImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogPresenterImplementation.swift; sourceTree = "<group>"; };
 		F3ED9A36D02917F68AD73FF8 /* Pods-Voio-VoioUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voio-VoioUITests.debug.xcconfig"; path = "Target Support Files/Pods-Voio-VoioUITests/Pods-Voio-VoioUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -282,10 +286,36 @@
 		F2D4DEA629E2E55C006ECCBA /* ProfileModule */ = {
 			isa = PBXGroup;
 			children = (
-				F2D4DE9829E2D4C3006ECCBA /* ProfileViewController.swift */,
-				F2D4DEB229E34B15006ECCBA /* UserProfile.swift */,
+				F2D4DEB929E353D2006ECCBA /* Model */,
+				F2D4DEBF29E35846006ECCBA /* View */,
+				F2D4DEBA29E353DF006ECCBA /* Presenter */,
 			);
 			path = ProfileModule;
+			sourceTree = "<group>";
+		};
+		F2D4DEB929E353D2006ECCBA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F2D4DEB229E34B15006ECCBA /* UserProfile.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F2D4DEBA29E353DF006ECCBA /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F2D4DEBB29E35405006ECCBA /* ProfilePresenter.swift */,
+				F2D4DEBD29E3543D006ECCBA /* ProfilePresenterImplementation.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F2D4DEBF29E35846006ECCBA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F2D4DE9829E2D4C3006ECCBA /* ProfileViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F2EF705C29E0593E003B5995 = {
@@ -371,8 +401,8 @@
 		F2EF709F29E061C1003B5995 /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
-				F2EF70A029E061D8003B5995 /* AuthService.swift */,
-				F2EF70B929E0B222003B5995 /* MovieService.swift */,
+				F2EF70A029E061D8003B5995 /* AuthManager.swift */,
+				F2EF70B929E0B222003B5995 /* MovieManager.swift */,
 				F2D4DEAE29E34ABF006ECCBA /* FirestoreManager.swift */,
 				F2D4DEB029E34AE0006ECCBA /* FirebaseStorageManager.swift */,
 			);
@@ -694,12 +724,14 @@
 				F2EF706D29E0593E003B5995 /* AuthViewController.swift in Sources */,
 				F2EF70A329E06387003B5995 /* CustomNavigationController.swift in Sources */,
 				F2AE955929E1A76600C1636D /* FavoriteViewController.swift in Sources */,
+				F2D4DEBC29E35405006ECCBA /* ProfilePresenter.swift in Sources */,
 				F2AE955F29E1A7F000C1636D /* FavoriteViewCell.swift in Sources */,
 				F2D4DEB329E34B15006ECCBA /* UserProfile.swift in Sources */,
 				F2D4DE8B29E2C24B006ECCBA /* DetailsPresenter.swift in Sources */,
 				F2EF70B629E0AFDF003B5995 /* Movie.swift in Sources */,
 				F2D4DE8D29E2C28C006ECCBA /* DetailsPresenterImplementation.swift in Sources */,
 				F2EF70BF29E0B4FE003B5995 /* CatalogPresenterImplementation.swift in Sources */,
+				F2D4DEBE29E3543D006ECCBA /* ProfilePresenterImplementation.swift in Sources */,
 				F2D4DEB129E34AE0006ECCBA /* FirebaseStorageManager.swift in Sources */,
 				F2D4DEA529E2E4F7006ECCBA /* FavoritePresenterImplementation.swift in Sources */,
 				F2EF706929E0593E003B5995 /* AppDelegate.swift in Sources */,
@@ -713,8 +745,8 @@
 				F2D4DE9D29E2D891006ECCBA /* PasswordValidator.swift in Sources */,
 				F2AE955529E1948500C1636D /* DetailsViewController.swift in Sources */,
 				F2EF70A529E06E58003B5995 /* SingUpViewController.swift in Sources */,
-				F2EF70A129E061D8003B5995 /* AuthService.swift in Sources */,
-				F2EF70BA29E0B222003B5995 /* MovieService.swift in Sources */,
+				F2EF70A129E061D8003B5995 /* AuthManager.swift in Sources */,
+				F2EF70BA29E0B222003B5995 /* MovieManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
