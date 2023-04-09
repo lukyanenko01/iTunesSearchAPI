@@ -9,15 +9,25 @@ import UIKit
 import SDWebImage
 import RealmSwift
 
+protocol DetailsViewControllerDelegate: AnyObject {
+    func didUpdateFavorite(movie: Movie)
+}
+
+
 class DetailsViewController: UIViewController {
     
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .clear
         scrollView.frame = view.bounds
+        scrollView.contentSize = contentSize
         scrollView.showsVerticalScrollIndicator = false
         return scrollView
     }()
+    
+    private var contentSize: CGSize {
+        CGSize(width: view.frame.width, height: view.frame.height+20)
+    }
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
@@ -89,7 +99,7 @@ class DetailsViewController: UIViewController {
     }()
     
     private lazy var stacVertical: UIStackView = {
-        let stac = UIStackView(arrangedSubviews: [titleLabel, stacHorizontal, ratingLabel, descriptionTextView])
+        let stac = UIStackView(arrangedSubviews: [titleLabel, stacHorizontal, ratingLabel, descriptionTextView, addFavoriteButton])
         stac.axis = .vertical
         stac.spacing = 10
         stac.translatesAutoresizingMaskIntoConstraints = false
@@ -98,24 +108,14 @@ class DetailsViewController: UIViewController {
     
     var movie: Movie?
     
+    weak var delegate: DetailsViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "custumBlack")
         setConstraints()
         addFavoriteButton.addTarget(self, action: #selector(addFavoriteButtonAction), for: .touchUpInside)
     }
-    
-    func updateContentSize() {
-        DispatchQueue.main.async {
-            let contentRect = self.scrollView.subviews.reduce(into: CGRect.zero) { rect, view in
-                rect = rect.union(view.frame)
-            }
-            self.scrollView.contentSize = CGSize(width: contentRect.width, height: contentRect.height + 80)
-        }
-    }
-    
-    
-    
     
     func setupViewController(movie: Movie) {
         self.movie = movie
@@ -124,22 +124,6 @@ class DetailsViewController: UIViewController {
         yearsLabel.text = String(movie.releaseDate.prefix(4))
         ratingLabel.text = movie.contentAdvisoryRating
         setDescriptionTextField(text: movie.longDescription ?? "N/A")
-        updateContentSize()
-        
-        if let imageUrl = URL(string: movie.artworkUrlHighQuality) {
-            imageView.sd_imageIndicator = SDWebImageActivityIndicator.medium
-            imageView.sd_setImage(with: imageUrl, completed: nil)
-        }
-        
-    }
-    
-    func setupViewToFavoritesController(movie: MovieObject) {
-        titleLabel.text = movie.trackName
-        genreLabel.text = movie.primaryGenreName
-        yearsLabel.text = String(movie.releaseDate.prefix(4))
-        ratingLabel.text = movie.contentAdvisoryRating
-        setDescriptionTextField(text: movie.longDescription)
-        updateContentSize()
         
         if let imageUrl = URL(string: movie.artworkUrlHighQuality) {
             imageView.sd_imageIndicator = SDWebImageActivityIndicator.medium
@@ -147,8 +131,24 @@ class DetailsViewController: UIViewController {
         }
         
         updateFavoriteButton(movieInFavorites: isMovieInFavorites(trackId: movie.trackId))
-        
     }
+    
+    func setupViewToFavoritesController(movie: MovieObject) {
+        self.movie = Movie(movieObject: movie)
+        titleLabel.text = movie.trackName
+        genreLabel.text = movie.primaryGenreName
+        yearsLabel.text = String(movie.releaseDate.prefix(4))
+        ratingLabel.text = movie.contentAdvisoryRating
+        setDescriptionTextField(text: movie.longDescription)
+        
+        if let imageUrl = URL(string: movie.artworkUrlHighQuality) {
+            imageView.sd_imageIndicator = SDWebImageActivityIndicator.medium
+            imageView.sd_setImage(with: imageUrl, completed: nil)
+        }
+        
+        updateFavoriteButton(movieInFavorites: isMovieInFavorites(trackId: movie.trackId))
+    }
+    
     
     func updateFavoriteButton(movieInFavorites: Bool) {
         if movieInFavorites {
@@ -212,7 +212,6 @@ class DetailsViewController: UIViewController {
         view.addSubview(scrollView)
         scrollView.addSubview(imageView)
         scrollView.addSubview(stacVertical)
-        scrollView.addSubview(addFavoriteButton)
         
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 0),
@@ -220,15 +219,10 @@ class DetailsViewController: UIViewController {
             imageView.heightAnchor.constraint(equalToConstant: view.bounds.height/3),
             imageView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             
-            stacVertical.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
+            stacVertical.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 40),
             stacVertical.widthAnchor.constraint(equalToConstant: view.bounds.width-40),
             stacVertical.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-            
-            addFavoriteButton.topAnchor.constraint(equalTo: stacVertical.bottomAnchor, constant: 20),
-            addFavoriteButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-            addFavoriteButton.widthAnchor.constraint(equalToConstant: 200),
-            addFavoriteButton.heightAnchor.constraint(equalToConstant: 40),
-            addFavoriteButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -20)
+            addFavoriteButton.widthAnchor.constraint(equalToConstant: view.bounds.width/2)
         ])
     }
     
@@ -243,6 +237,7 @@ class DetailsViewController: UIViewController {
         }
         
         updateFavoriteButton(movieInFavorites: !movieInFavorites)
+        delegate?.didUpdateFavorite(movie: favoriteMovie)
         dismiss(animated: true)
     }
     
@@ -259,5 +254,5 @@ class DetailsViewController: UIViewController {
         }
     }
     
-    
 }
+

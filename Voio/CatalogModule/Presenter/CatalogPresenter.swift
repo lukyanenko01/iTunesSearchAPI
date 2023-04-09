@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Foundation
-
 protocol CatalogView: AnyObject {
     func setLoadingIndicator(isLoading: Bool)
     func updateMovies(movies: [Movie])

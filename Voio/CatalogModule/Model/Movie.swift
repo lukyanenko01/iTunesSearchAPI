@@ -26,3 +26,14 @@ struct Movie: Codable {
     
 }
 
+extension Movie {
+    init(movieObject: MovieObject) {
+        self.trackId = movieObject.trackId
+        self.trackName = movieObject.trackName
+        self.primaryGenreName = movieObject.primaryGenreName
+        self.releaseDate = movieObject.releaseDate
+        self.contentAdvisoryRating = movieObject.contentAdvisoryRating
+        self.longDescription = movieObject.longDescription
+        self.artworkUrl100 = movieObject.artworkUrlHighQuality.replacingOccurrences(of: "164x172", with: "100x100")
+    }
+}

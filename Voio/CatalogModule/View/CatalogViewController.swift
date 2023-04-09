@@ -27,6 +27,9 @@ class CatalogViewController: UIViewController, CatalogView {
     
     var presenter: CatalogPresenter!
     
+    private let customNavigationControllerDelegate = CustomNavigationControllerDelegate()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "custumBlack")
@@ -35,6 +38,8 @@ class CatalogViewController: UIViewController, CatalogView {
         setupSearchController()
         configColletionView()
         setConstraints()
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.8862745098, green: 0.1568627451, blue: 0.2352941176, alpha: 1)
+        navigationController?.delegate = customNavigationControllerDelegate
     }
     
     func setLoadingIndicator(isLoading: Bool) {

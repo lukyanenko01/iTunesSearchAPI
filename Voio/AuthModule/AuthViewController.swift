@@ -21,7 +21,7 @@ class AuthViewController: UIViewController {
         label.textAlignment = .center
         label.font = UIFont(name: "Avenir Next Demi Bold", size: 20)
         label.textColor = .white
-        label.text = "Time to music."
+        label.text = "Movie time."
         return label
     }()
     

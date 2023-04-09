@@ -16,6 +16,8 @@
 		F2AE956129E1A85600C1636D /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AE956029E1A85600C1636D /* UILabelExtension.swift */; };
 		F2AE956329E1AA2400C1636D /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AE956229E1AA2400C1636D /* FavoriteTableViewCell.swift */; };
 		F2AE956529E1ABD700C1636D /* MovieObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AE956429E1ABD700C1636D /* MovieObject.swift */; };
+		F2AE956A29E1DA6100C1636D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F2AE956929E1DA6100C1636D /* Lottie */; };
+		F2AE956C29E1DD8200C1636D /* favorites.json in Resources */ = {isa = PBXBuildFile; fileRef = F2AE956B29E1DD8200C1636D /* favorites.json */; };
 		F2EF706929E0593E003B5995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF706829E0593E003B5995 /* AppDelegate.swift */; };
 		F2EF706B29E0593E003B5995 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF706A29E0593E003B5995 /* SceneDelegate.swift */; };
 		F2EF706D29E0593E003B5995 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF706C29E0593E003B5995 /* AuthViewController.swift */; };
@@ -71,6 +73,7 @@
 		F2AE956029E1A85600C1636D /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		F2AE956229E1AA2400C1636D /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		F2AE956429E1ABD700C1636D /* MovieObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieObject.swift; sourceTree = "<group>"; };
+		F2AE956B29E1DD8200C1636D /* favorites.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = favorites.json; sourceTree = "<group>"; };
 		F2EF706529E0593E003B5995 /* Voio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2EF706829E0593E003B5995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2EF706A29E0593E003B5995 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +108,7 @@
 			files = (
 				F2EF709C29E05F1D003B5995 /* FirebaseAuth in Frameworks */,
 				C8AF088EFDC07735EA4B2D15 /* Pods_Voio.framework in Frameworks */,
+				F2AE956A29E1DA6100C1636D /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +157,7 @@
 		F2AE955229E1945600C1636D /* DetailsModule */ = {
 			isa = PBXGroup;
 			children = (
-				F2AE955329E1948500C1636D /* DetailsViewController.swift */,
+				F2D4DE8929E2BB61006ECCBA /* View */,
 			);
 			path = DetailsModule;
 			sourceTree = "<group>";
@@ -167,6 +171,14 @@
 				F2AE956429E1ABD700C1636D /* MovieObject.swift */,
 			);
 			path = FavoriteModule;
+			sourceTree = "<group>";
+		};
+		F2D4DE8929E2BB61006ECCBA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F2AE955329E1948500C1636D /* DetailsViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F2EF705C29E0593E003B5995 = {
@@ -237,6 +249,7 @@
 		F2EF709E29E06052003B5995 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F2AE956B29E1DD8200C1636D /* favorites.json */,
 				F2EF707129E05940003B5995 /* Assets.xcassets */,
 				F2EF707329E05940003B5995 /* LaunchScreen.storyboard */,
 				F2EF707629E05940003B5995 /* Info.plist */,
@@ -337,6 +350,7 @@
 			name = Voio;
 			packageProductDependencies = (
 				F2EF709B29E05F1D003B5995 /* FirebaseAuth */,
+				F2AE956929E1DA6100C1636D /* Lottie */,
 			);
 			productName = Voio;
 			productReference = F2EF706529E0593E003B5995 /* Voio.app */;
@@ -415,6 +429,7 @@
 			mainGroup = F2EF705C29E0593E003B5995;
 			packageReferences = (
 				F2EF709A29E05F1D003B5995 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F2AE956829E1DA6000C1636D /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = F2EF706629E0593E003B5995 /* Products */;
 			projectDirPath = "";
@@ -436,6 +451,7 @@
 				F2EF707529E05940003B5995 /* LaunchScreen.storyboard in Resources */,
 				F2EF707229E05940003B5995 /* Assets.xcassets in Resources */,
 				F2EF709929E05EC5003B5995 /* GoogleService-Info.plist in Resources */,
+				F2AE956C29E1DD8200C1636D /* favorites.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -935,6 +951,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F2AE956829E1DA6000C1636D /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
 		F2EF709A29E05F1D003B5995 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -946,6 +970,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F2AE956929E1DA6100C1636D /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2AE956829E1DA6000C1636D /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		F2EF709B29E05F1D003B5995 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F2EF709A29E05F1D003B5995 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
