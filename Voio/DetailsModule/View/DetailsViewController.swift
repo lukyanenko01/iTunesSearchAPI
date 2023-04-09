@@ -9,8 +9,6 @@ import UIKit
 import SDWebImage
 import RealmSwift
 
-//TODO: Добавить кнопку поделиться
-
 protocol DetailsViewControllerDelegate: AnyObject {
     func didUpdateFavorite(movie: Movie)
 }
@@ -20,14 +18,14 @@ class DetailsViewController: UIViewController, DetailsView {
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .clear
-        scrollView.frame = view.bounds
         scrollView.contentSize = contentSize
         scrollView.showsVerticalScrollIndicator = false
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
     }()
     
     private var contentSize: CGSize {
-        CGSize(width: view.frame.width, height: view.frame.height+20)
+        CGSize(width: view.frame.width, height: view.frame.height+80)
     }
     
     private let imageView: UIImageView = {
@@ -44,7 +42,7 @@ class DetailsViewController: UIViewController, DetailsView {
     private var genreLabel = UILabel(text: "", font: UIFont(name: "Comfortaa", size: 14), alignment: .left)
     
     private var yearsLabel = UILabel(text: "", font: UIFont(name: "Comfortaa", size: 14), alignment: .left)
-
+    
     private var ratingLabel = UILabel(text: "", font: UIFont(name: "Comfortaa-Bold", size: 22), alignment: .left)
     
     private let descriptionTextView: UITextView = {
@@ -62,7 +60,16 @@ class DetailsViewController: UIViewController, DetailsView {
         button.setTitle("Add to Favorites", for: .normal)
         button.titleLabel?.font = UIFont(name: "Comfortaa-Bold", size: 14)
         button.layer.cornerRadius = 10
-        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private let shareButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+        button.setTitle("Share", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Comfortaa-Bold", size: 14)
+        button.layer.cornerRadius = 10
         return button
     }()
     
@@ -74,11 +81,19 @@ class DetailsViewController: UIViewController, DetailsView {
     }()
     
     private lazy var stacVertical: UIStackView = {
-        let stac = UIStackView(arrangedSubviews: [titleLabel, stacHorizontal, ratingLabel, descriptionTextView, addFavoriteButton])
+        let stac = UIStackView(arrangedSubviews: [titleLabel, stacHorizontal, ratingLabel, descriptionTextView, addFavoriteButton, shareButton])
         stac.axis = .vertical
         stac.spacing = 10
         stac.translatesAutoresizingMaskIntoConstraints = false
         return stac
+    }()
+    
+    private lazy var mainStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [imageView, stacVertical])
+        stackView.axis = .vertical
+        stackView.spacing = 40
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
     }()
     
     private var movie: Movie?
@@ -92,7 +107,32 @@ class DetailsViewController: UIViewController, DetailsView {
         view.backgroundColor = UIColor(named: "custumBlack")
         setConstraints()
         addFavoriteButton.addTarget(self, action: #selector(addFavoriteButtonAction), for: .touchUpInside)
+        shareButton.addTarget(self, action: #selector(shareButtonAction), for: .touchUpInside)
     }
+    
+    @objc func shareButtonAction() {
+        guard let movie = movie else { return }
+        let movieTitle = movie.trackName
+        let movieGenre = movie.primaryGenreName
+        let movieYear = String(movie.releaseDate.prefix(4))
+        let movieRating = movie.contentAdvisoryRating ?? "No Rating"
+        let movieDescription = movie.longDescription ?? "No description available."
+        
+        let movieInfo = """
+            Check out this movie:
+            Title: \(movieTitle)
+            Genre: \(movieGenre)
+            Year: \(movieYear)
+            Rating: \(movieRating)
+            Description: \(movieDescription)
+        """
+        
+        let activityViewController = UIActivityViewController(activityItems: [movieInfo], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        present(activityViewController, animated: true, completion: nil)
+    }
+    
+    
     
     func setupView(with movie: Movie) {
         titleLabel.text = movie.trackName
@@ -160,23 +200,20 @@ class DetailsViewController: UIViewController, DetailsView {
     
     private func setConstraints() {
         view.addSubview(scrollView)
-        scrollView.addSubview(imageView)
-        scrollView.addSubview(stacVertical)
+        scrollView.addSubview(mainStackView)
         
         NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 0),
-            imageView.widthAnchor.constraint(equalToConstant: view.bounds.width-40),
-            imageView.heightAnchor.constraint(equalToConstant: view.bounds.height/3),
-            imageView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             
-            stacVertical.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 40),
-            stacVertical.widthAnchor.constraint(equalToConstant: view.bounds.width-40),
-            stacVertical.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor)
+            mainStackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20),
+            mainStackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
+            mainStackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
+            mainStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -80),
+            mainStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -40)
         ])
-        
-        let widthConstraint = addFavoriteButton.widthAnchor.constraint(equalToConstant: view.bounds.width/2)
-        widthConstraint.priority = UILayoutPriority(rawValue: 999)
-        widthConstraint.isActive = true
     }
     
     @objc func addFavoriteButtonAction() {
