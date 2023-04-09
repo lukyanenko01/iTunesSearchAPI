@@ -188,6 +188,9 @@ class SingUpViewController: UIViewController {
             case .success():
                 print("User signed in successfully")
                 //TODO: перейти на следующий экран
+                if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                    scene.windows.first?.rootViewController = MainTabBarController()
+                }
             case .failure(let error):
                 print("Error signing in: \(error.localizedDescription)")
                 //TODO: обработать ошибку и показать алерт

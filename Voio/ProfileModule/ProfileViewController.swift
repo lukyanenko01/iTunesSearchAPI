@@ -7,8 +7,10 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
+import FirebaseStorage
+import SDWebImage
 
-//TODO: Сохранения данных профиля в Firebase
 class ProfileViewController: UIViewController {
     
     let imageView: UIImageView = {
@@ -74,15 +76,18 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(named: "custumBlack")
         title = "Profile"
         setConstraints()
-        loadProfileData()
+        
+        loadProfileDataFromFirestore()
         
         nameTextField.delegate = self
         lastNameTextField.delegate = self
         
-        NotificationCenter.default.addObserver(self, selector: #selector(saveProfileData), name: UIApplication.willResignActiveNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(saveProfileData), name: UIApplication.willTerminateNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(saveProfileDataToFirestore), name: UIApplication.willResignActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(saveProfileDataToFirestore), name: UIApplication.willTerminateNotification, object: nil)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
@@ -96,17 +101,66 @@ class ProfileViewController: UIViewController {
         
     }
     
-    func loadProfileData() {
-        let defaults = UserDefaults.standard
-        if let savedName = defaults.string(forKey: "savedName") {
-            nameTextField.text = savedName
+    func loadProfileDataFromFirestore() {
+        FirestoreManager.shared.loadProfileData { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let userProfile):
+                    self?.nameTextField.text = userProfile.name
+                    self?.lastNameTextField.text = userProfile.lastName
+                    if let url = URL(string: userProfile.profileImageURL) {
+                        self?.downloadProfileImageFromStorage(url: url)
+                    }
+                case .failure(let error):
+                    print("Error getting user data from Firestore: \(error.localizedDescription)")
+                }
+            }
         }
-        if let savedLastName = defaults.string(forKey: "savedLastName") {
-            lastNameTextField.text = savedLastName
-        }
+    }
+    
+    
+    
+    @objc func saveProfileDataToFirestore() {
+        guard let name = nameTextField.text, let lastName = lastNameTextField.text else { return }
         
-        if let imageData = defaults.data(forKey: "savedImage") {
-            imageView.image = UIImage(data: imageData)
+        uploadProfileImageToStorage { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let imageURL):
+                    let userProfile = UserProfile(name: name, lastName: lastName, profileImageURL: imageURL.absoluteString)
+                    
+                    FirestoreManager.shared.saveProfileData(userProfile) { error in
+                        if let error = error {
+                            print("Error saving user data to Firestore: \(error)")
+                        } else {
+                            print("User data successfully saved to Firestore")
+                        }
+                    }
+                case .failure(let error):
+                    print("Error uploading profile image to Firebase Storage: \(error)")
+                }
+            }
+        }
+    }
+    
+    
+    func uploadProfileImageToStorage(completion: @escaping (Result<URL, Error>) -> Void) {
+        guard let image = imageView.image else { return }
+        
+        FirebaseStorageManager.shared.uploadProfileImage(image) { result in
+            completion(result)
+        }
+    }
+    
+    func downloadProfileImageFromStorage(url: URL) {
+        let indicator = SDWebImageActivityIndicator.white
+        imageView.sd_imageIndicator = indicator
+        imageView.sd_setImage(with: url, placeholderImage: nil, options: .highPriority) { (image, error, _, _) in
+            if let error = error {
+                print("Error downloading profile image from Firebase Storage: \(error)")
+            } else {
+                self.imageView.image = image
+            }
         }
     }
     
@@ -129,12 +183,6 @@ class ProfileViewController: UIViewController {
         
         bottomConstraint = buttonEnter.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40)
         bottomConstraint?.isActive = true
-    }
-    
-    @objc func saveProfileData() {
-        let defaults = UserDefaults.standard
-        defaults.set(nameTextField.text, forKey: "savedName")
-        defaults.set(lastNameTextField.text, forKey: "savedLastName")
     }
     
     @objc private func tapHideKeyboardAction(_ sender: UITapGestureRecognizer) {
@@ -196,7 +244,7 @@ extension ProfileViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        saveProfileData()
+        saveProfileDataToFirestore()
     }
 }
 
@@ -211,6 +259,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
             let defaults = UserDefaults.standard
             defaults.set(imageData, forKey: "savedImage")
         }
+        saveProfileDataToFirestore()
     }
     
     
@@ -219,3 +268,9 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     }
     
 }
+
+
+
+
+
+
