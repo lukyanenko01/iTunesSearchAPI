@@ -18,7 +18,7 @@ class SingUpViewController: UIViewController {
         return view
     }()
     
-    private var titleLabel = UILabel(text: "Sign up", font: UIFont(name: "Arial Bold", size: 22), alignment: .center)
+    private var titleLabel = UILabel(text: "Sign up", font: UIFont(name: "Comfortaa-Bold", size: 22), alignment: .center)
     
     private let emailTextField: UITextField = {
         let textField = UITextField()
@@ -64,7 +64,7 @@ class SingUpViewController: UIViewController {
         let button = UIButton()
         button.backgroundColor = .red
         button.setTitle("Сonfirm", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Avenir Next Demi Bold", size: 19)
+        button.titleLabel?.font = UIFont(name: "Comfortaa-Bold", size: 14)
         button.layer.cornerRadius = 10
         return button
     }()

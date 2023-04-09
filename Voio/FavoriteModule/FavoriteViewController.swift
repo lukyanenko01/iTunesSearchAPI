@@ -20,7 +20,7 @@ class FavoriteViewController: UIViewController {
         return view
     }()
     
-    private let emptyTitleLabel = UILabel(text: "Your favorite movies will be here", font: UIFont(name: "Arial Bold", size: 18), alignment: .center)
+    private let emptyTitleLabel = UILabel(text: "Your favorite movies will be here", font: UIFont(name: "Comfortaa-Bold", size: 18), alignment: .center)
     
     private lazy var stacMain: UIStackView = {
         let stac = UIStackView(arrangedSubviews: [emptyCartView, emptyTitleLabel])

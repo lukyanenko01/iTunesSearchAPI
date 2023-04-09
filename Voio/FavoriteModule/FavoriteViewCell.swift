@@ -17,9 +17,9 @@ class FavoriteViewCell: UIView {
         return imageView
     }()
     
-    var titleLabel = UILabel(text: "", font: UIFont(name: "Arial", size: 18), alignment: .left)
-    var genreLabel = UILabel(text: "", font: UIFont(name: "Arial", size: 14), alignment: .left)
-    var yearsLabel = UILabel(text: "", font: UIFont(name: "Arial", size: 14), alignment: .left)
+    var titleLabel = UILabel(text: "", font: UIFont(name: "Comfortaa-Bold", size: 18), alignment: .left)
+    var genreLabel = UILabel(text: "", font: UIFont(name: "Comfortaa", size: 14), alignment: .left)
+    var yearsLabel = UILabel(text: "", font: UIFont(name: "Comfortaa", size: 14), alignment: .left)
     
     private lazy var stacHorizontal: UIStackView = {
         let stac = UIStackView(arrangedSubviews: [genreLabel, yearsLabel])
@@ -70,7 +70,7 @@ class FavoriteViewCell: UIView {
             imageView.widthAnchor.constraint(equalToConstant: 100),
             imageView.heightAnchor.constraint(equalToConstant: 100),
             
-            titleLabel.heightAnchor.constraint(equalToConstant: 30),
+//            titleLabel.heightAnchor.constraint(equalToConstant: 30),
             mainStacHorizontal.topAnchor.constraint(equalTo: topAnchor, constant: 18),
             mainStacHorizontal.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 18),
             mainStacHorizontal.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -18),

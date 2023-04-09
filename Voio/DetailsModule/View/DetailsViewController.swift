@@ -9,6 +9,8 @@ import UIKit
 import SDWebImage
 import RealmSwift
 
+//TODO: Добавить кнопку поделиться
+
 protocol DetailsViewControllerDelegate: AnyObject {
     func didUpdateFavorite(movie: Movie)
 }
@@ -37,13 +39,13 @@ class DetailsViewController: UIViewController, DetailsView {
         return imageView
     }()
     
-    private var titleLabel = UILabel(text: "", font: UIFont(name: "Arial Bold", size: 22), alignment: .left)
+    private var titleLabel = UILabel(text: "", font: UIFont(name: "Comfortaa-Bold", size: 22), alignment: .left)
     
-    private var genreLabel = UILabel(text: "", font: UIFont(name: "Arial", size: 14), alignment: .left)
+    private var genreLabel = UILabel(text: "", font: UIFont(name: "Comfortaa", size: 14), alignment: .left)
     
-    private var yearsLabel = UILabel(text: "", font: UIFont(name: "Arial", size: 14), alignment: .left)
+    private var yearsLabel = UILabel(text: "", font: UIFont(name: "Comfortaa", size: 14), alignment: .left)
 
-    private var ratingLabel = UILabel(text: "", font: UIFont(name: "Arial Bold", size: 22), alignment: .left)    
+    private var ratingLabel = UILabel(text: "", font: UIFont(name: "Comfortaa-Bold", size: 22), alignment: .left)
     
     private let descriptionTextView: UITextView = {
         let textView = UITextView()
@@ -58,7 +60,7 @@ class DetailsViewController: UIViewController, DetailsView {
         let button = UIButton()
         button.backgroundColor = #colorLiteral(red: 0.8882787824, green: 0.158880502, blue: 0.2406231761, alpha: 1)
         button.setTitle("Add to Favorites", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Avenir Next Demi Bold", size: 14)
+        button.titleLabel?.font = UIFont(name: "Comfortaa-Bold", size: 14)
         button.layer.cornerRadius = 10
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -148,7 +150,7 @@ class DetailsViewController: UIViewController, DetailsView {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 6
         let attributedString = NSMutableAttributedString(string: text)
-        let font = UIFont(name: "Arial", size: 14) ?? UIFont.systemFont(ofSize: 14)
+        let font = UIFont(name: "Comfortaa", size: 14) ?? UIFont.systemFont(ofSize: 14)
         
         attributedString.addAttribute(.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: attributedString.length))
         attributedString.addAttribute(.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: attributedString.length))

@@ -16,16 +16,16 @@ class AuthViewController: UIViewController {
         return view
     }()
     
-    private var titleLabel = UILabel(text: "Movie time.", font: UIFont(name: "Arial Bold", size: 20), alignment: .center)
+    private var titleLabel = UILabel(text: "Movie time.", font: UIFont(name: "Comfortaa-Bold", size: 20), alignment: .center)
     
-    private var descriptionLabel = UILabel(text: "Not with us yet? Register now!", font: UIFont(name: "Arial", size: 18), alignment: .center)
+    private var descriptionLabel = UILabel(text: "Not with us yet? Register now!", font: UIFont(name: "Comfortaa", size: 18), alignment: .center)
     
     private let logInButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .white
         button.setTitle("Log in", for: .normal)
         button.setTitleColor(UIColor(named: "custumBlack"), for: .normal)
-        button.titleLabel?.font = UIFont(name: "Avenir Next Demi", size: 14)
+        button.titleLabel?.font = UIFont(name: "Comfortaa", size: 14)
         button.layer.cornerRadius = 10
         return button
     }()
@@ -35,7 +35,7 @@ class AuthViewController: UIViewController {
         button.backgroundColor = .red
         button.setTitle("Sign up", for: .normal)
         button.setTitleColor(UIColor(named: "custumBlack"), for: .normal)
-        button.titleLabel?.font = UIFont(name: "Avenir Next Demi", size: 14)
+        button.titleLabel?.font = UIFont(name: "Comfortaa", size: 14)
         button.layer.cornerRadius = 10
         return button
     }()
