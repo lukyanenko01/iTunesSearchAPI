@@ -24,7 +24,6 @@
 		F2D4DE9429E2D168006ECCBA /* Comfortaa.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2D4DE9329E2D168006ECCBA /* Comfortaa.ttf */; };
 		F2D4DE9629E2D1F6006ECCBA /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2D4DE9529E2D1F6006ECCBA /* Comfortaa-Bold.ttf */; };
 		F2D4DE9A29E2D4C3006ECCBA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DE9829E2D4C3006ECCBA /* ProfileViewController.swift */; };
-		F2D4DE9B29E2D4C3006ECCBA /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2D4DE9929E2D4C3006ECCBA /* ProfileViewController.xib */; };
 		F2D4DE9D29E2D891006ECCBA /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DE9C29E2D891006ECCBA /* PasswordValidator.swift */; };
 		F2D4DEA329E2E4D2006ECCBA /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DEA229E2E4D2006ECCBA /* FavoritePresenter.swift */; };
 		F2D4DEA529E2E4F7006ECCBA /* FavoritePresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DEA429E2E4F7006ECCBA /* FavoritePresenterImplementation.swift */; };
@@ -90,7 +89,6 @@
 		F2D4DE9329E2D168006ECCBA /* Comfortaa.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Comfortaa.ttf; sourceTree = "<group>"; };
 		F2D4DE9529E2D1F6006ECCBA /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
 		F2D4DE9829E2D4C3006ECCBA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		F2D4DE9929E2D4C3006ECCBA /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		F2D4DE9C29E2D891006ECCBA /* PasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
 		F2D4DEA229E2E4D2006ECCBA /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
 		F2D4DEA429E2E4F7006ECCBA /* FavoritePresenterImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenterImplementation.swift; sourceTree = "<group>"; };
@@ -239,8 +237,8 @@
 		F2D4DE9E29E2E484006ECCBA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F2D4DE9F29E2E497006ECCBA /* Cell */,
 				F2AE955829E1A76600C1636D /* FavoriteViewController.swift */,
+				F2D4DE9F29E2E497006ECCBA /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -275,7 +273,6 @@
 			isa = PBXGroup;
 			children = (
 				F2D4DE9829E2D4C3006ECCBA /* ProfileViewController.swift */,
-				F2D4DE9929E2D4C3006ECCBA /* ProfileViewController.xib */,
 			);
 			path = ProfileModule;
 			sourceTree = "<group>";
@@ -551,7 +548,6 @@
 			files = (
 				F2EF70B329E087E6003B5995 /* CatalogCollectionViewCell.xib in Resources */,
 				F2D4DE9429E2D168006ECCBA /* Comfortaa.ttf in Resources */,
-				F2D4DE9B29E2D4C3006ECCBA /* ProfileViewController.xib in Resources */,
 				F2EF707529E05940003B5995 /* LaunchScreen.storyboard in Resources */,
 				F2EF707229E05940003B5995 /* Assets.xcassets in Resources */,
 				F2EF709929E05EC5003B5995 /* GoogleService-Info.plist in Resources */,

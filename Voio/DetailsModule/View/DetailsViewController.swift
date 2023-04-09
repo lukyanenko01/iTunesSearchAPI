@@ -110,30 +110,6 @@ class DetailsViewController: UIViewController, DetailsView {
         shareButton.addTarget(self, action: #selector(shareButtonAction), for: .touchUpInside)
     }
     
-    @objc func shareButtonAction() {
-        guard let movie = movie else { return }
-        let movieTitle = movie.trackName
-        let movieGenre = movie.primaryGenreName
-        let movieYear = String(movie.releaseDate.prefix(4))
-        let movieRating = movie.contentAdvisoryRating ?? "No Rating"
-        let movieDescription = movie.longDescription ?? "No description available."
-        
-        let movieInfo = """
-            Check out this movie:
-            Title: \(movieTitle)
-            Genre: \(movieGenre)
-            Year: \(movieYear)
-            Rating: \(movieRating)
-            Description: \(movieDescription)
-        """
-        
-        let activityViewController = UIActivityViewController(activityItems: [movieInfo], applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = self.view
-        present(activityViewController, animated: true, completion: nil)
-    }
-    
-    
-    
     func setupView(with movie: Movie) {
         titleLabel.text = movie.trackName
         genreLabel.text = movie.primaryGenreName
@@ -222,6 +198,28 @@ class DetailsViewController: UIViewController, DetailsView {
             delegate?.didUpdateFavorite(movie: movies)
         }
         dismiss(animated: true)
+    }
+    
+    @objc func shareButtonAction() {
+        guard let movie = movie else { return }
+        let movieTitle = movie.trackName
+        let movieGenre = movie.primaryGenreName
+        let movieYear = String(movie.releaseDate.prefix(4))
+        let movieRating = movie.contentAdvisoryRating ?? "No Rating"
+        let movieDescription = movie.longDescription ?? "No description available."
+        
+        let movieInfo = """
+            Check out this movie:
+            Title: \(movieTitle)
+            Genre: \(movieGenre)
+            Year: \(movieYear)
+            Rating: \(movieRating)
+            Description: \(movieDescription)
+        """
+        
+        let activityViewController = UIActivityViewController(activityItems: [movieInfo], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        present(activityViewController, animated: true, completion: nil)
     }
     
 }

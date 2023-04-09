@@ -70,7 +70,6 @@ class FavoriteViewCell: UIView {
             imageView.widthAnchor.constraint(equalToConstant: 100),
             imageView.heightAnchor.constraint(equalToConstant: 100),
             
-//            titleLabel.heightAnchor.constraint(equalToConstant: 30),
             mainStacHorizontal.topAnchor.constraint(equalTo: topAnchor, constant: 18),
             mainStacHorizontal.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 18),
             mainStacHorizontal.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -18),
