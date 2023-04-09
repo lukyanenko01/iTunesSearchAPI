@@ -37,39 +37,13 @@ class DetailsViewController: UIViewController, DetailsView {
         return imageView
     }()
     
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .left
-        label.textColor = .white
-        label.numberOfLines = 3
-        label.font = UIFont(name: "Arial Bold", size: 22)
-        return label
-    }()
+    private var titleLabel = UILabel(text: "", font: UIFont(name: "Arial Bold", size: 22), alignment: .left)
     
-    private let genreLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .left
-        label.textColor = .white
-        label.font = UIFont(name: "Arial", size: 14)
-        return label
-    }()
+    private var genreLabel = UILabel(text: "", font: UIFont(name: "Arial", size: 14), alignment: .left)
     
-    private let yearsLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .left
-        label.textColor = .white
-        label.font = UIFont(name: "Arial", size: 14)
-        return label
-    }()
-    
-    private let ratingLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .left
-        label.textColor = .white
-        label.font = UIFont(name: "Arial Bold", size: 22)
-        return label
-    }()
-    
+    private var yearsLabel = UILabel(text: "", font: UIFont(name: "Arial", size: 14), alignment: .left)
+
+    private var ratingLabel = UILabel(text: "", font: UIFont(name: "Arial Bold", size: 22), alignment: .left)    
     
     private let descriptionTextView: UITextView = {
         let textView = UITextView()

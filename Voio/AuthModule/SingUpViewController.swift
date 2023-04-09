@@ -18,14 +18,7 @@ class SingUpViewController: UIViewController {
         return view
     }()
     
-    private let titleLbl: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .center
-        label.font = UIFont(name: "Avenir Next Demi Bold", size: 22)
-        label.textColor = .white
-        label.text = "Sign up"
-        return label
-    }()
+    private var titleLabel = UILabel(text: "Sign up", font: UIFont(name: "Arial Bold", size: 22), alignment: .center)
     
     private let emailTextField: UITextField = {
         let textField = UITextField()
@@ -78,7 +71,7 @@ class SingUpViewController: UIViewController {
     
     
     private lazy var stacVertical: UIStackView = {
-        let stac = UIStackView(arrangedSubviews: [titleLbl, emailTextField, passwordTextField, curentPasswordTextField, buttonEnter])
+        let stac = UIStackView(arrangedSubviews: [titleLabel, emailTextField, passwordTextField, curentPasswordTextField, buttonEnter])
         stac.axis = .vertical
         stac.spacing = 15
         stac.translatesAutoresizingMaskIntoConstraints = false
@@ -101,7 +94,7 @@ class SingUpViewController: UIViewController {
     }
     
     func configureForLogin() {
-        titleLbl.text = "Log In"
+        titleLabel.text = "Log In"
         curentPasswordTextField.removeFromSuperview()
         if let heightConstraint = viewBacgraundHeightConstraint {
             heightConstraint.isActive = false

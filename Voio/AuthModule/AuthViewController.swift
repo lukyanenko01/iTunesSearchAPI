@@ -16,23 +16,9 @@ class AuthViewController: UIViewController {
         return view
     }()
     
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .center
-        label.font = UIFont(name: "Avenir Next Demi Bold", size: 20)
-        label.textColor = .white
-        label.text = "Movie time."
-        return label
-    }()
+    private var titleLabel = UILabel(text: "Movie time.", font: UIFont(name: "Arial Bold", size: 20), alignment: .center)
     
-    private let descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .center
-        label.font = UIFont(name: "Avenir Next Demi", size: 10)
-        label.textColor = .white
-        label.text = "Not with us yet? Register now!"
-        return label
-    }()
+    private var descriptionLabel = UILabel(text: "Not with us yet? Register now!", font: UIFont(name: "Arial", size: 18), alignment: .center)
     
     private let logInButton: UIButton = {
         let button = UIButton()

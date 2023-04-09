@@ -205,6 +205,14 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		F2D4DE9229E2C530006ECCBA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F2AE956029E1A85600C1636D /* UILabelExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F2EF705C29E0593E003B5995 = {
 			isa = PBXGroup;
 			children = (
@@ -238,7 +246,7 @@
 				F2EF70AB29E0863D003B5995 /* CatalogModule */,
 				F2AE955229E1945600C1636D /* DetailsModule */,
 				F2AE955729E1A64C00C1636D /* FavoriteModule */,
-				F2AE956029E1A85600C1636D /* UILabelExtension.swift */,
+				F2D4DE9229E2C530006ECCBA /* Extensions */,
 				F2EF709E29E06052003B5995 /* Resources */,
 			);
 			path = Voio;
