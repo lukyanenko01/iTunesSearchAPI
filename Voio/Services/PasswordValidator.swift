@@ -40,3 +40,4 @@ struct PasswordValidator {
         return result
     }
 }
+

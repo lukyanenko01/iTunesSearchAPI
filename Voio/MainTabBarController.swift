@@ -16,9 +16,7 @@ class MainTabBarController: UITabBarController {
         viewControllers = setViewControllers()
         addSwipeGestureRecognizers()
     }
-    
-    //TODO: изменить цвет UINavc
-    
+        
     private func configTabBar() {
         tabBar.tintColor = .white
         tabBar.isTranslucent = false

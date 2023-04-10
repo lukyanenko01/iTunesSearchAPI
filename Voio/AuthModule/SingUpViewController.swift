@@ -94,6 +94,10 @@ class SingUpViewController: UIViewController {
             configureForLogin()
         }
         
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        curentPasswordTextField.delegate = self
+        
         let tapHideKeyboard = UITapGestureRecognizer(target: self, action: #selector(tapHideKeyboardAction))
         view.addGestureRecognizer(tapHideKeyboard)
     }
@@ -120,20 +124,16 @@ class SingUpViewController: UIViewController {
               let password = passwordTextField.text,
               let confirmPassword = curentPasswordTextField.text
         else {
-            //TODO: Показать ошибку, если одно из полей пустое
-            //TODO: Написать проверку паролля
             return
         }
         
-        authService.createUser(email: email, password: password, confirmPassword: confirmPassword) { result in
+        authService.createUser(email: email, password: password, confirmPassword: confirmPassword) { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .success():
-                //TODO: Успешная регистрация
-                print("User created successfully")
-                //TODO:  перейти на следующий экран
+                self.navigateToMainScreen()
             case .failure(let error):
-                print("Error creating user: \(error.localizedDescription)")
-                //TODO: обработать ошибку и показать алерт
+                self.showAlert(message: "\(error)")
             }
         }
     }
@@ -141,6 +141,19 @@ class SingUpViewController: UIViewController {
     private func showCodeValid(varification: String) {
         
     }
+    
+    func navigateToMainScreen() {
+        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = scene.windows.first {
+            window.rootViewController = MainTabBarController()
+            UIView.transition(with: window,
+                              duration: 0.3,
+                              options: .transitionCrossDissolve,
+                              animations: nil,
+                              completion: nil)
+        }
+    }
+    
     
     private func setConstraint() {
         view.addSubview(viewBacgraund)
@@ -164,6 +177,20 @@ class SingUpViewController: UIViewController {
         ])
     }
     
+    private func passwordValidatorCheck(text: String) -> Bool {
+        let validator = passwordValidator.validate(with: [.minLength(amount: minLength), .hasNumber, .hasLowercase, .hasUppercase], text: text)
+        let validationResult = validator.values.allSatisfy { $0 }
+        return validationResult
+    }
+    
+    
+    private func showAlert(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
     @objc private func tapHideKeyboardAction(_ sender: UITapGestureRecognizer) {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
@@ -171,31 +198,41 @@ class SingUpViewController: UIViewController {
     }
     
     @objc func enterAction() {
-        registerNewUser()
+        if !isLoginMode {
+            if passwordValidatorCheck(text: passwordTextField.text ?? "") {
+                registerNewUser()
+            } else {
+                showAlert(message: "The password must contain at least 8 characters, 1 number, 1 lowercase and 1 uppercase letter.")
+            }
+        } else {
+            loginAction()
+        }
     }
     
     @objc func loginAction() {
         guard let email = emailTextField.text, !email.isEmpty,
               let password = passwordTextField.text, !password.isEmpty
         else {
-            //TODO: Показать ошибку, если одно из полей пустое
-            //TODO: Написать проверку паролля
+            showAlert(message: "Please fill in all fields.")
             return
         }
         
-        authService.signIn(email: email, password: password) { result in
+        authService.signIn(email: email, password: password) { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .success():
-                print("User signed in successfully")
-                //TODO: перейти на следующий экран
-                if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-                    scene.windows.first?.rootViewController = MainTabBarController()
-                }
-            case .failure(let error):
-                print("Error signing in: \(error.localizedDescription)")
-                //TODO: обработать ошибку и показать алерт
+                self.navigateToMainScreen()
+            case .failure(_):
+                self.showAlert(message: "You entered an incorrect password or email.")
             }
         }
     }
 }
-//TODO: UITextFieldDelegate
+
+extension SingUpViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
