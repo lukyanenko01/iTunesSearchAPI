@@ -125,7 +125,6 @@ class AuthViewController: UIViewController {
         navigationController?.pushViewController(controller, animated: true)
     }
     
-    
 }
 
 

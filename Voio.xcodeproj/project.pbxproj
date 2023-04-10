@@ -36,6 +36,8 @@
 		F2D4DEB829E34D3D006ECCBA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DEB729E34D3D006ECCBA /* MainTabBarController.swift */; };
 		F2D4DEBC29E35405006ECCBA /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DEBB29E35405006ECCBA /* ProfilePresenter.swift */; };
 		F2D4DEBE29E3543D006ECCBA /* ProfilePresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DEBD29E3543D006ECCBA /* ProfilePresenterImplementation.swift */; };
+		F2DF0DF229E3F5BB007886C2 /* SignUpPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DF0DF129E3F5BB007886C2 /* SignUpPresenterProtocol.swift */; };
+		F2DF0DF429E3F5D2007886C2 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DF0DF329E3F5D2007886C2 /* SignUpPresenter.swift */; };
 		F2EF706929E0593E003B5995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF706829E0593E003B5995 /* AppDelegate.swift */; };
 		F2EF706B29E0593E003B5995 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF706A29E0593E003B5995 /* SceneDelegate.swift */; };
 		F2EF706D29E0593E003B5995 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF706C29E0593E003B5995 /* AuthViewController.swift */; };
@@ -105,6 +107,8 @@
 		F2D4DEB729E34D3D006ECCBA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		F2D4DEBB29E35405006ECCBA /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		F2D4DEBD29E3543D006ECCBA /* ProfilePresenterImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenterImplementation.swift; sourceTree = "<group>"; };
+		F2DF0DF129E3F5BB007886C2 /* SignUpPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenterProtocol.swift; sourceTree = "<group>"; };
+		F2DF0DF329E3F5D2007886C2 /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 		F2EF706529E0593E003B5995 /* Voio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2EF706829E0593E003B5995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2EF706A29E0593E003B5995 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -318,6 +322,24 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F2DF0DF529E3F698007886C2 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F2DF0DF129E3F5BB007886C2 /* SignUpPresenterProtocol.swift */,
+				F2DF0DF329E3F5D2007886C2 /* SignUpPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F2DF0DF629E3F6AF007886C2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F2EF706C29E0593E003B5995 /* AuthViewController.swift */,
+				F2EF70A429E06E58003B5995 /* SingUpViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F2EF705C29E0593E003B5995 = {
 			isa = PBXGroup;
 			children = (
@@ -412,8 +434,8 @@
 		F2EF70A729E08103003B5995 /* AuthModule */ = {
 			isa = PBXGroup;
 			children = (
-				F2EF706C29E0593E003B5995 /* AuthViewController.swift */,
-				F2EF70A429E06E58003B5995 /* SingUpViewController.swift */,
+				F2DF0DF629E3F6AF007886C2 /* View */,
+				F2DF0DF529E3F698007886C2 /* Presenter */,
 			);
 			path = AuthModule;
 			sourceTree = "<group>";
@@ -725,6 +747,7 @@
 				F2EF70A329E06387003B5995 /* CustomNavigationController.swift in Sources */,
 				F2AE955929E1A76600C1636D /* FavoriteViewController.swift in Sources */,
 				F2D4DEBC29E35405006ECCBA /* ProfilePresenter.swift in Sources */,
+				F2DF0DF429E3F5D2007886C2 /* SignUpPresenter.swift in Sources */,
 				F2AE955F29E1A7F000C1636D /* FavoriteViewCell.swift in Sources */,
 				F2D4DEB329E34B15006ECCBA /* UserProfile.swift in Sources */,
 				F2D4DE8B29E2C24B006ECCBA /* DetailsPresenter.swift in Sources */,
@@ -740,6 +763,7 @@
 				F2D4DEAF29E34ABF006ECCBA /* FirestoreManager.swift in Sources */,
 				F2D4DE9A29E2D4C3006ECCBA /* ProfileViewController.swift in Sources */,
 				F2EF706B29E0593E003B5995 /* SceneDelegate.swift in Sources */,
+				F2DF0DF229E3F5BB007886C2 /* SignUpPresenterProtocol.swift in Sources */,
 				F2EF70BD29E0B363003B5995 /* CatalogPresenter.swift in Sources */,
 				F2AE956329E1AA2400C1636D /* FavoriteTableViewCell.swift in Sources */,
 				F2D4DE9D29E2D891006ECCBA /* PasswordValidator.swift in Sources */,

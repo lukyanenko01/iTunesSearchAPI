@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseAuth
 
-class SingUpViewController: UIViewController {
+class SingUpViewController: UIViewController, SignUpViewProtocol {
     
     private let viewBacgraund: UIView = {
         let view = UIView()
@@ -84,22 +84,41 @@ class SingUpViewController: UIViewController {
     private let passwordValidator = PasswordValidator()
     private let minLength = 8
     
+    private var presenter: SignUpPresenterProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "custumBlack")
+        
+        presenter = SignUpPresenter(view: self, authService: AuthManager(), passwordValidator: PasswordValidator())
+        
         setConstraint()
-        buttonAction()
+        actionAndDelegate()
         
         if isLoginMode {
             configureForLogin()
         }
         
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
-        curentPasswordTextField.delegate = self
-        
-        let tapHideKeyboard = UITapGestureRecognizer(target: self, action: #selector(tapHideKeyboardAction))
-        view.addGestureRecognizer(tapHideKeyboard)
+    }
+    
+    func setPresenter(_ presenter: SignUpPresenterProtocol) {
+        self.presenter = presenter
+    }
+    
+    func showError(message: String) {
+        showAlert(message: message)
+    }
+    
+    func navigateToMainScreen() {
+        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = scene.windows.first {
+            window.rootViewController = MainTabBarController()
+            UIView.transition(with: window,
+                              duration: 0.3,
+                              options: .transitionCrossDissolve,
+                              animations: nil,
+                              completion: nil)
+        }
     }
     
     func configureForLogin() {
@@ -115,8 +134,15 @@ class SingUpViewController: UIViewController {
     }
     
     
-    private func buttonAction() {
+    private func actionAndDelegate() {
         buttonEnter.addTarget(self, action: #selector(enterAction), for: .touchUpInside)
+        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        curentPasswordTextField.delegate = self
+        
+        let tapHideKeyboard = UITapGestureRecognizer(target: self, action: #selector(tapHideKeyboardAction))
+        view.addGestureRecognizer(tapHideKeyboard)
     }
     
     private func registerNewUser() {
@@ -138,22 +164,18 @@ class SingUpViewController: UIViewController {
         }
     }
     
-    private func showCodeValid(varification: String) {
-        
+    private func passwordValidatorCheck(text: String) -> Bool {
+        let validator = passwordValidator.validate(with: [.minLength(amount: minLength), .hasNumber, .hasLowercase, .hasUppercase], text: text)
+        let validationResult = validator.values.allSatisfy { $0 }
+        return validationResult
     }
     
-    func navigateToMainScreen() {
-        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-           let window = scene.windows.first {
-            window.rootViewController = MainTabBarController()
-            UIView.transition(with: window,
-                              duration: 0.3,
-                              options: .transitionCrossDissolve,
-                              animations: nil,
-                              completion: nil)
-        }
-    }
     
+    private func showAlert(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
     
     private func setConstraint() {
         view.addSubview(viewBacgraund)
@@ -177,20 +199,6 @@ class SingUpViewController: UIViewController {
         ])
     }
     
-    private func passwordValidatorCheck(text: String) -> Bool {
-        let validator = passwordValidator.validate(with: [.minLength(amount: minLength), .hasNumber, .hasLowercase, .hasUppercase], text: text)
-        let validationResult = validator.values.allSatisfy { $0 }
-        return validationResult
-    }
-    
-    
-    private func showAlert(message: String) {
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
-    }
-    
-    
     @objc private func tapHideKeyboardAction(_ sender: UITapGestureRecognizer) {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
@@ -199,34 +207,16 @@ class SingUpViewController: UIViewController {
     
     @objc func enterAction() {
         if !isLoginMode {
-            if passwordValidatorCheck(text: passwordTextField.text ?? "") {
-                registerNewUser()
-            } else {
-                showAlert(message: "The password must contain at least 8 characters, 1 number, 1 lowercase and 1 uppercase letter.")
-            }
+            presenter?.registerButtonTapped(withEmail: emailTextField.text, password: passwordTextField.text, confirmPassword: curentPasswordTextField.text)
         } else {
             loginAction()
         }
     }
     
     @objc func loginAction() {
-        guard let email = emailTextField.text, !email.isEmpty,
-              let password = passwordTextField.text, !password.isEmpty
-        else {
-            showAlert(message: "Please fill in all fields.")
-            return
-        }
-        
-        authService.signIn(email: email, password: password) { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success():
-                self.navigateToMainScreen()
-            case .failure(_):
-                self.showAlert(message: "You entered an incorrect password or email.")
-            }
-        }
+        presenter?.loginButtonTapped(withEmail: emailTextField.text, password: passwordTextField.text)
     }
+    
 }
 
 extension SingUpViewController: UITextFieldDelegate {
