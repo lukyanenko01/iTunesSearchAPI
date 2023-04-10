@@ -7,15 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5FE9EC0612ABC6E4D7F3D5BF /* Pods_VoioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92045854129E7F6374BC731B /* Pods_VoioTests.framework */; };
+		6ED6A376E718F2F8DB315D1C /* Pods_Voio_VoioUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC803078BC7EE827B4B219AD /* Pods_Voio_VoioUITests.framework */; };
+		C8AF088EFDC07735EA4B2D15 /* Pods_Voio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D138691600E0A049AACCF7D /* Pods_Voio.framework */; };
+		F2AE955529E1948500C1636D /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AE955329E1948500C1636D /* DetailsViewController.swift */; };
+		F2AE955929E1A76600C1636D /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AE955829E1A76600C1636D /* FavoriteViewController.swift */; };
+		F2AE955F29E1A7F000C1636D /* FavoriteViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AE955E29E1A7F000C1636D /* FavoriteViewCell.swift */; };
+		F2AE956129E1A85600C1636D /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AE956029E1A85600C1636D /* UILabelExtension.swift */; };
+		F2AE956329E1AA2400C1636D /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AE956229E1AA2400C1636D /* FavoriteTableViewCell.swift */; };
+		F2AE956529E1ABD700C1636D /* MovieObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AE956429E1ABD700C1636D /* MovieObject.swift */; };
+		F2AE956A29E1DA6100C1636D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F2AE956929E1DA6100C1636D /* Lottie */; };
+		F2AE956C29E1DD8200C1636D /* favorites.json in Resources */ = {isa = PBXBuildFile; fileRef = F2AE956B29E1DD8200C1636D /* favorites.json */; };
+		F2D4DE8B29E2C24B006ECCBA /* DetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DE8A29E2C24B006ECCBA /* DetailsPresenter.swift */; };
+		F2D4DE8D29E2C28C006ECCBA /* DetailsPresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DE8C29E2C28C006ECCBA /* DetailsPresenterImplementation.swift */; };
+		F2D4DE8F29E2C2A9006ECCBA /* DetailsMovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DE8E29E2C2A9006ECCBA /* DetailsMovieService.swift */; };
+		F2D4DE9429E2D168006ECCBA /* Comfortaa.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2D4DE9329E2D168006ECCBA /* Comfortaa.ttf */; };
+		F2D4DE9629E2D1F6006ECCBA /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2D4DE9529E2D1F6006ECCBA /* Comfortaa-Bold.ttf */; };
+		F2D4DE9A29E2D4C3006ECCBA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DE9829E2D4C3006ECCBA /* ProfileViewController.swift */; };
+		F2D4DE9D29E2D891006ECCBA /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DE9C29E2D891006ECCBA /* PasswordValidator.swift */; };
+		F2D4DEA329E2E4D2006ECCBA /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DEA229E2E4D2006ECCBA /* FavoritePresenter.swift */; };
+		F2D4DEA529E2E4F7006ECCBA /* FavoritePresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DEA429E2E4F7006ECCBA /* FavoritePresenterImplementation.swift */; };
+		F2D4DEA929E33E0B006ECCBA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F2D4DEA829E33E0B006ECCBA /* FirebaseAuth */; };
+		F2D4DEAB29E33E0B006ECCBA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F2D4DEAA29E33E0B006ECCBA /* FirebaseFirestore */; };
+		F2D4DEAD29E33E0B006ECCBA /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = F2D4DEAC29E33E0B006ECCBA /* FirebaseStorage */; };
+		F2D4DEAF29E34ABF006ECCBA /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DEAE29E34ABF006ECCBA /* FirestoreManager.swift */; };
+		F2D4DEB129E34AE0006ECCBA /* FirebaseStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DEB029E34AE0006ECCBA /* FirebaseStorageManager.swift */; };
+		F2D4DEB329E34B15006ECCBA /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DEB229E34B15006ECCBA /* UserProfile.swift */; };
+		F2D4DEB829E34D3D006ECCBA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DEB729E34D3D006ECCBA /* MainTabBarController.swift */; };
+		F2D4DEBC29E35405006ECCBA /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DEBB29E35405006ECCBA /* ProfilePresenter.swift */; };
+		F2D4DEBE29E3543D006ECCBA /* ProfilePresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4DEBD29E3543D006ECCBA /* ProfilePresenterImplementation.swift */; };
+		F2DF0DF229E3F5BB007886C2 /* SignUpPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DF0DF129E3F5BB007886C2 /* SignUpPresenterProtocol.swift */; };
+		F2DF0DF429E3F5D2007886C2 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DF0DF329E3F5D2007886C2 /* SignUpPresenter.swift */; };
 		F2EF706929E0593E003B5995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF706829E0593E003B5995 /* AppDelegate.swift */; };
 		F2EF706B29E0593E003B5995 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF706A29E0593E003B5995 /* SceneDelegate.swift */; };
-		F2EF706D29E0593E003B5995 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF706C29E0593E003B5995 /* ViewController.swift */; };
-		F2EF707029E0593E003B5995 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2EF706E29E0593E003B5995 /* Main.storyboard */; };
+		F2EF706D29E0593E003B5995 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF706C29E0593E003B5995 /* AuthViewController.swift */; };
 		F2EF707229E05940003B5995 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2EF707129E05940003B5995 /* Assets.xcassets */; };
 		F2EF707529E05940003B5995 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2EF707329E05940003B5995 /* LaunchScreen.storyboard */; };
 		F2EF708029E05940003B5995 /* VoioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF707F29E05940003B5995 /* VoioTests.swift */; };
 		F2EF708A29E05940003B5995 /* VoioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF708929E05940003B5995 /* VoioUITests.swift */; };
 		F2EF708C29E05940003B5995 /* VoioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF708B29E05940003B5995 /* VoioUITestsLaunchTests.swift */; };
+		F2EF709929E05EC5003B5995 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2EF709829E05EC5003B5995 /* GoogleService-Info.plist */; };
+		F2EF70A129E061D8003B5995 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70A029E061D8003B5995 /* AuthManager.swift */; };
+		F2EF70A329E06387003B5995 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70A229E06387003B5995 /* CustomNavigationController.swift */; };
+		F2EF70A529E06E58003B5995 /* SingUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70A429E06E58003B5995 /* SingUpViewController.swift */; };
+		F2EF70AD29E0865F003B5995 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70AC29E0865F003B5995 /* CatalogViewController.swift */; };
+		F2EF70B229E087E6003B5995 /* CatalogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70B029E087E6003B5995 /* CatalogCollectionViewCell.swift */; };
+		F2EF70B329E087E6003B5995 /* CatalogCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2EF70B129E087E6003B5995 /* CatalogCollectionViewCell.xib */; };
+		F2EF70B629E0AFDF003B5995 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70B529E0AFDF003B5995 /* Movie.swift */; };
+		F2EF70BA29E0B222003B5995 /* MovieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70B929E0B222003B5995 /* MovieManager.swift */; };
+		F2EF70BD29E0B363003B5995 /* CatalogPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70BC29E0B363003B5995 /* CatalogPresenter.swift */; };
+		F2EF70BF29E0B4FE003B5995 /* CatalogPresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF70BE29E0B4FD003B5995 /* CatalogPresenterImplementation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,11 +77,42 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		161C099047FFCFDEDB8CDD98 /* Pods-Voio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voio.release.xcconfig"; path = "Target Support Files/Pods-Voio/Pods-Voio.release.xcconfig"; sourceTree = "<group>"; };
+		3B9A75C17C1AD9CEF914129B /* Pods-VoioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoioTests.debug.xcconfig"; path = "Target Support Files/Pods-VoioTests/Pods-VoioTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6D138691600E0A049AACCF7D /* Pods_Voio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Voio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75013E709E04912411B007A8 /* Pods-Voio-VoioUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voio-VoioUITests.release.xcconfig"; path = "Target Support Files/Pods-Voio-VoioUITests/Pods-Voio-VoioUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8F7D10C2A07283A5F8430F3E /* Pods-Voio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voio.debug.xcconfig"; path = "Target Support Files/Pods-Voio/Pods-Voio.debug.xcconfig"; sourceTree = "<group>"; };
+		9170AECEEC326D63B56E0819 /* Pods-VoioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoioTests.release.xcconfig"; path = "Target Support Files/Pods-VoioTests/Pods-VoioTests.release.xcconfig"; sourceTree = "<group>"; };
+		92045854129E7F6374BC731B /* Pods_VoioTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoioTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC803078BC7EE827B4B219AD /* Pods_Voio_VoioUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Voio_VoioUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2AE955329E1948500C1636D /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		F2AE955829E1A76600C1636D /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		F2AE955E29E1A7F000C1636D /* FavoriteViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewCell.swift; sourceTree = "<group>"; };
+		F2AE956029E1A85600C1636D /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
+		F2AE956229E1AA2400C1636D /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		F2AE956429E1ABD700C1636D /* MovieObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieObject.swift; sourceTree = "<group>"; };
+		F2AE956B29E1DD8200C1636D /* favorites.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = favorites.json; sourceTree = "<group>"; };
+		F2D4DE8A29E2C24B006ECCBA /* DetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenter.swift; sourceTree = "<group>"; };
+		F2D4DE8C29E2C28C006ECCBA /* DetailsPresenterImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenterImplementation.swift; sourceTree = "<group>"; };
+		F2D4DE8E29E2C2A9006ECCBA /* DetailsMovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsMovieService.swift; sourceTree = "<group>"; };
+		F2D4DE9329E2D168006ECCBA /* Comfortaa.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Comfortaa.ttf; sourceTree = "<group>"; };
+		F2D4DE9529E2D1F6006ECCBA /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
+		F2D4DE9829E2D4C3006ECCBA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F2D4DE9C29E2D891006ECCBA /* PasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
+		F2D4DEA229E2E4D2006ECCBA /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
+		F2D4DEA429E2E4F7006ECCBA /* FavoritePresenterImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenterImplementation.swift; sourceTree = "<group>"; };
+		F2D4DEAE29E34ABF006ECCBA /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
+		F2D4DEB029E34AE0006ECCBA /* FirebaseStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageManager.swift; sourceTree = "<group>"; };
+		F2D4DEB229E34B15006ECCBA /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		F2D4DEB729E34D3D006ECCBA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		F2D4DEBB29E35405006ECCBA /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		F2D4DEBD29E3543D006ECCBA /* ProfilePresenterImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenterImplementation.swift; sourceTree = "<group>"; };
+		F2DF0DF129E3F5BB007886C2 /* SignUpPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenterProtocol.swift; sourceTree = "<group>"; };
+		F2DF0DF329E3F5D2007886C2 /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 		F2EF706529E0593E003B5995 /* Voio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2EF706829E0593E003B5995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2EF706A29E0593E003B5995 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F2EF706C29E0593E003B5995 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F2EF706F29E0593E003B5995 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F2EF706C29E0593E003B5995 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		F2EF707129E05940003B5995 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2EF707429E05940003B5995 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2EF707629E05940003B5995 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +121,18 @@
 		F2EF708529E05940003B5995 /* VoioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2EF708929E05940003B5995 /* VoioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoioUITests.swift; sourceTree = "<group>"; };
 		F2EF708B29E05940003B5995 /* VoioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoioUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F2EF709829E05EC5003B5995 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F2EF70A029E061D8003B5995 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		F2EF70A229E06387003B5995 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		F2EF70A429E06E58003B5995 /* SingUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewController.swift; sourceTree = "<group>"; };
+		F2EF70AC29E0865F003B5995 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
+		F2EF70B029E087E6003B5995 /* CatalogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCollectionViewCell.swift; sourceTree = "<group>"; };
+		F2EF70B129E087E6003B5995 /* CatalogCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatalogCollectionViewCell.xib; sourceTree = "<group>"; };
+		F2EF70B529E0AFDF003B5995 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		F2EF70B929E0B222003B5995 /* MovieManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieManager.swift; sourceTree = "<group>"; };
+		F2EF70BC29E0B363003B5995 /* CatalogPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogPresenter.swift; sourceTree = "<group>"; };
+		F2EF70BE29E0B4FD003B5995 /* CatalogPresenterImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogPresenterImplementation.swift; sourceTree = "<group>"; };
+		F3ED9A36D02917F68AD73FF8 /* Pods-Voio-VoioUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voio-VoioUITests.debug.xcconfig"; path = "Target Support Files/Pods-Voio-VoioUITests/Pods-Voio-VoioUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +140,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8AF088EFDC07735EA4B2D15 /* Pods_Voio.framework in Frameworks */,
+				F2D4DEAB29E33E0B006ECCBA /* FirebaseFirestore in Frameworks */,
+				F2D4DEA929E33E0B006ECCBA /* FirebaseAuth in Frameworks */,
+				F2D4DEAD29E33E0B006ECCBA /* FirebaseStorage in Frameworks */,
+				F2AE956A29E1DA6100C1636D /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FE9EC0612ABC6E4D7F3D5BF /* Pods_VoioTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +160,186 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ED6A376E718F2F8DB315D1C /* Pods_Voio_VoioUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		303DE2AE4A2592103216A640 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D138691600E0A049AACCF7D /* Pods_Voio.framework */,
+				DC803078BC7EE827B4B219AD /* Pods_Voio_VoioUITests.framework */,
+				92045854129E7F6374BC731B /* Pods_VoioTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D86AB5F6FE657B4CC47EF81B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8F7D10C2A07283A5F8430F3E /* Pods-Voio.debug.xcconfig */,
+				161C099047FFCFDEDB8CDD98 /* Pods-Voio.release.xcconfig */,
+				F3ED9A36D02917F68AD73FF8 /* Pods-Voio-VoioUITests.debug.xcconfig */,
+				75013E709E04912411B007A8 /* Pods-Voio-VoioUITests.release.xcconfig */,
+				3B9A75C17C1AD9CEF914129B /* Pods-VoioTests.debug.xcconfig */,
+				9170AECEEC326D63B56E0819 /* Pods-VoioTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F2AE955229E1945600C1636D /* DetailsModule */ = {
+			isa = PBXGroup;
+			children = (
+				F2D4DE8929E2BB61006ECCBA /* View */,
+				F2D4DE9129E2C397006ECCBA /* Presenter */,
+			);
+			path = DetailsModule;
+			sourceTree = "<group>";
+		};
+		F2AE955729E1A64C00C1636D /* FavoriteModule */ = {
+			isa = PBXGroup;
+			children = (
+				F2D4DEA129E2E4BA006ECCBA /* Model */,
+				F2D4DE9E29E2E484006ECCBA /* View */,
+				F2D4DEA029E2E4B0006ECCBA /* Presenter */,
+			);
+			path = FavoriteModule;
+			sourceTree = "<group>";
+		};
+		F2D4DE8929E2BB61006ECCBA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F2AE955329E1948500C1636D /* DetailsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F2D4DE9029E2C2B4006ECCBA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F2D4DE8E29E2C2A9006ECCBA /* DetailsMovieService.swift */,
+				F2D4DE9C29E2D891006ECCBA /* PasswordValidator.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F2D4DE9129E2C397006ECCBA /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F2D4DE8A29E2C24B006ECCBA /* DetailsPresenter.swift */,
+				F2D4DE8C29E2C28C006ECCBA /* DetailsPresenterImplementation.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F2D4DE9229E2C530006ECCBA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F2AE956029E1A85600C1636D /* UILabelExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F2D4DE9729E2D48B006ECCBA /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				F2D4DE9329E2D168006ECCBA /* Comfortaa.ttf */,
+				F2D4DE9529E2D1F6006ECCBA /* Comfortaa-Bold.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		F2D4DE9E29E2E484006ECCBA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F2AE955829E1A76600C1636D /* FavoriteViewController.swift */,
+				F2D4DE9F29E2E497006ECCBA /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F2D4DE9F29E2E497006ECCBA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F2AE956229E1AA2400C1636D /* FavoriteTableViewCell.swift */,
+				F2AE955E29E1A7F000C1636D /* FavoriteViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F2D4DEA029E2E4B0006ECCBA /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F2D4DEA229E2E4D2006ECCBA /* FavoritePresenter.swift */,
+				F2D4DEA429E2E4F7006ECCBA /* FavoritePresenterImplementation.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F2D4DEA129E2E4BA006ECCBA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F2AE956429E1ABD700C1636D /* MovieObject.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F2D4DEA629E2E55C006ECCBA /* ProfileModule */ = {
+			isa = PBXGroup;
+			children = (
+				F2D4DEB929E353D2006ECCBA /* Model */,
+				F2D4DEBF29E35846006ECCBA /* View */,
+				F2D4DEBA29E353DF006ECCBA /* Presenter */,
+			);
+			path = ProfileModule;
+			sourceTree = "<group>";
+		};
+		F2D4DEB929E353D2006ECCBA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F2D4DEB229E34B15006ECCBA /* UserProfile.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F2D4DEBA29E353DF006ECCBA /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F2D4DEBB29E35405006ECCBA /* ProfilePresenter.swift */,
+				F2D4DEBD29E3543D006ECCBA /* ProfilePresenterImplementation.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F2D4DEBF29E35846006ECCBA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F2D4DE9829E2D4C3006ECCBA /* ProfileViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F2DF0DF529E3F698007886C2 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F2DF0DF129E3F5BB007886C2 /* SignUpPresenterProtocol.swift */,
+				F2DF0DF329E3F5D2007886C2 /* SignUpPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F2DF0DF629E3F6AF007886C2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F2EF706C29E0593E003B5995 /* AuthViewController.swift */,
+				F2EF70A429E06E58003B5995 /* SingUpViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F2EF705C29E0593E003B5995 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +347,8 @@
 				F2EF707E29E05940003B5995 /* VoioTests */,
 				F2EF708829E05940003B5995 /* VoioUITests */,
 				F2EF706629E0593E003B5995 /* Products */,
+				D86AB5F6FE657B4CC47EF81B /* Pods */,
+				303DE2AE4A2592103216A640 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +365,17 @@
 		F2EF706729E0593E003B5995 /* Voio */ = {
 			isa = PBXGroup;
 			children = (
-				F2EF706829E0593E003B5995 /* AppDelegate.swift */,
-				F2EF706A29E0593E003B5995 /* SceneDelegate.swift */,
-				F2EF706C29E0593E003B5995 /* ViewController.swift */,
-				F2EF706E29E0593E003B5995 /* Main.storyboard */,
-				F2EF707129E05940003B5995 /* Assets.xcassets */,
-				F2EF707329E05940003B5995 /* LaunchScreen.storyboard */,
-				F2EF707629E05940003B5995 /* Info.plist */,
+				F2EF709D29E0603B003B5995 /* Application */,
+				F2EF709F29E061C1003B5995 /* NetworkManager */,
+				F2D4DE9029E2C2B4006ECCBA /* Services */,
+				F2D4DEB729E34D3D006ECCBA /* MainTabBarController.swift */,
+				F2EF70A729E08103003B5995 /* AuthModule */,
+				F2EF70AB29E0863D003B5995 /* CatalogModule */,
+				F2AE955229E1945600C1636D /* DetailsModule */,
+				F2AE955729E1A64C00C1636D /* FavoriteModule */,
+				F2D4DEA629E2E55C006ECCBA /* ProfileModule */,
+				F2D4DE9229E2C530006ECCBA /* Extensions */,
+				F2EF709E29E06052003B5995 /* Resources */,
 			);
 			path = Voio;
 			sourceTree = "<group>";
@@ -127,6 +397,94 @@
 			path = VoioUITests;
 			sourceTree = "<group>";
 		};
+		F2EF709D29E0603B003B5995 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				F2EF706829E0593E003B5995 /* AppDelegate.swift */,
+				F2EF706A29E0593E003B5995 /* SceneDelegate.swift */,
+				F2EF70A229E06387003B5995 /* CustomNavigationController.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		F2EF709E29E06052003B5995 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F2D4DE9729E2D48B006ECCBA /* Font */,
+				F2AE956B29E1DD8200C1636D /* favorites.json */,
+				F2EF707129E05940003B5995 /* Assets.xcassets */,
+				F2EF707329E05940003B5995 /* LaunchScreen.storyboard */,
+				F2EF707629E05940003B5995 /* Info.plist */,
+				F2EF709829E05EC5003B5995 /* GoogleService-Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F2EF709F29E061C1003B5995 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				F2EF70A029E061D8003B5995 /* AuthManager.swift */,
+				F2EF70B929E0B222003B5995 /* MovieManager.swift */,
+				F2D4DEAE29E34ABF006ECCBA /* FirestoreManager.swift */,
+				F2D4DEB029E34AE0006ECCBA /* FirebaseStorageManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		F2EF70A729E08103003B5995 /* AuthModule */ = {
+			isa = PBXGroup;
+			children = (
+				F2DF0DF629E3F6AF007886C2 /* View */,
+				F2DF0DF529E3F698007886C2 /* Presenter */,
+			);
+			path = AuthModule;
+			sourceTree = "<group>";
+		};
+		F2EF70AB29E0863D003B5995 /* CatalogModule */ = {
+			isa = PBXGroup;
+			children = (
+				F2EF70B429E0AFD4003B5995 /* Model */,
+				F2EF70B829E0B14F003B5995 /* View */,
+				F2EF70BB29E0B344003B5995 /* Presenter */,
+			);
+			path = CatalogModule;
+			sourceTree = "<group>";
+		};
+		F2EF70B429E0AFD4003B5995 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F2EF70B529E0AFDF003B5995 /* Movie.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F2EF70B729E0B139003B5995 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F2EF70B029E087E6003B5995 /* CatalogCollectionViewCell.swift */,
+				F2EF70B129E087E6003B5995 /* CatalogCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F2EF70B829E0B14F003B5995 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F2EF70AC29E0865F003B5995 /* CatalogViewController.swift */,
+				F2EF70B729E0B139003B5995 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F2EF70BB29E0B344003B5995 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F2EF70BC29E0B363003B5995 /* CatalogPresenter.swift */,
+				F2EF70BE29E0B4FD003B5995 /* CatalogPresenterImplementation.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,15 +492,23 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F2EF708F29E05940003B5995 /* Build configuration list for PBXNativeTarget "Voio" */;
 			buildPhases = (
+				FB3D0D989C1B4590687F106E /* [CP] Check Pods Manifest.lock */,
 				F2EF706129E0593E003B5995 /* Sources */,
 				F2EF706229E0593E003B5995 /* Frameworks */,
 				F2EF706329E0593E003B5995 /* Resources */,
+				0ABBD8CA1E1B58424B5A41C7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Voio;
+			packageProductDependencies = (
+				F2AE956929E1DA6100C1636D /* Lottie */,
+				F2D4DEA829E33E0B006ECCBA /* FirebaseAuth */,
+				F2D4DEAA29E33E0B006ECCBA /* FirebaseFirestore */,
+				F2D4DEAC29E33E0B006ECCBA /* FirebaseStorage */,
+			);
 			productName = Voio;
 			productReference = F2EF706529E0593E003B5995 /* Voio.app */;
 			productType = "com.apple.product-type.application";
@@ -151,6 +517,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F2EF709229E05940003B5995 /* Build configuration list for PBXNativeTarget "VoioTests" */;
 			buildPhases = (
+				1C904761B52387909D8A684D /* [CP] Check Pods Manifest.lock */,
 				F2EF707729E05940003B5995 /* Sources */,
 				F2EF707829E05940003B5995 /* Frameworks */,
 				F2EF707929E05940003B5995 /* Resources */,
@@ -169,9 +536,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F2EF709529E05940003B5995 /* Build configuration list for PBXNativeTarget "VoioUITests" */;
 			buildPhases = (
+				73762B655B4DBCD8672F6573 /* [CP] Check Pods Manifest.lock */,
 				F2EF708129E05940003B5995 /* Sources */,
 				F2EF708229E05940003B5995 /* Frameworks */,
 				F2EF708329E05940003B5995 /* Resources */,
+				DDEBD2DB806AEDD0A4BC98AD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -215,6 +584,10 @@
 				Base,
 			);
 			mainGroup = F2EF705C29E0593E003B5995;
+			packageReferences = (
+				F2AE956829E1DA6000C1636D /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				F2D4DEA729E33E0B006ECCBA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = F2EF706629E0593E003B5995 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -231,9 +604,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2EF70B329E087E6003B5995 /* CatalogCollectionViewCell.xib in Resources */,
+				F2D4DE9429E2D168006ECCBA /* Comfortaa.ttf in Resources */,
 				F2EF707529E05940003B5995 /* LaunchScreen.storyboard in Resources */,
 				F2EF707229E05940003B5995 /* Assets.xcassets in Resources */,
-				F2EF707029E0593E003B5995 /* Main.storyboard in Resources */,
+				F2EF709929E05EC5003B5995 /* GoogleService-Info.plist in Resources */,
+				F2AE956C29E1DD8200C1636D /* favorites.json in Resources */,
+				F2D4DE9629E2D1F6006ECCBA /* Comfortaa-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,14 +630,147 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0ABBD8CA1E1B58424B5A41C7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Voio/Pods-Voio-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Voio/Pods-Voio-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Voio/Pods-Voio-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1C904761B52387909D8A684D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VoioTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73762B655B4DBCD8672F6573 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Voio-VoioUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DDEBD2DB806AEDD0A4BC98AD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Voio-VoioUITests/Pods-Voio-VoioUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Voio-VoioUITests/Pods-Voio-VoioUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Voio-VoioUITests/Pods-Voio-VoioUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB3D0D989C1B4590687F106E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Voio-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F2EF706129E0593E003B5995 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2EF706D29E0593E003B5995 /* ViewController.swift in Sources */,
+				F2D4DEB829E34D3D006ECCBA /* MainTabBarController.swift in Sources */,
+				F2EF70AD29E0865F003B5995 /* CatalogViewController.swift in Sources */,
+				F2EF70B229E087E6003B5995 /* CatalogCollectionViewCell.swift in Sources */,
+				F2D4DEA329E2E4D2006ECCBA /* FavoritePresenter.swift in Sources */,
+				F2AE956129E1A85600C1636D /* UILabelExtension.swift in Sources */,
+				F2EF706D29E0593E003B5995 /* AuthViewController.swift in Sources */,
+				F2EF70A329E06387003B5995 /* CustomNavigationController.swift in Sources */,
+				F2AE955929E1A76600C1636D /* FavoriteViewController.swift in Sources */,
+				F2D4DEBC29E35405006ECCBA /* ProfilePresenter.swift in Sources */,
+				F2DF0DF429E3F5D2007886C2 /* SignUpPresenter.swift in Sources */,
+				F2AE955F29E1A7F000C1636D /* FavoriteViewCell.swift in Sources */,
+				F2D4DEB329E34B15006ECCBA /* UserProfile.swift in Sources */,
+				F2D4DE8B29E2C24B006ECCBA /* DetailsPresenter.swift in Sources */,
+				F2EF70B629E0AFDF003B5995 /* Movie.swift in Sources */,
+				F2D4DE8D29E2C28C006ECCBA /* DetailsPresenterImplementation.swift in Sources */,
+				F2EF70BF29E0B4FE003B5995 /* CatalogPresenterImplementation.swift in Sources */,
+				F2D4DEBE29E3543D006ECCBA /* ProfilePresenterImplementation.swift in Sources */,
+				F2D4DEB129E34AE0006ECCBA /* FirebaseStorageManager.swift in Sources */,
+				F2D4DEA529E2E4F7006ECCBA /* FavoritePresenterImplementation.swift in Sources */,
 				F2EF706929E0593E003B5995 /* AppDelegate.swift in Sources */,
+				F2AE956529E1ABD700C1636D /* MovieObject.swift in Sources */,
+				F2D4DE8F29E2C2A9006ECCBA /* DetailsMovieService.swift in Sources */,
+				F2D4DEAF29E34ABF006ECCBA /* FirestoreManager.swift in Sources */,
+				F2D4DE9A29E2D4C3006ECCBA /* ProfileViewController.swift in Sources */,
 				F2EF706B29E0593E003B5995 /* SceneDelegate.swift in Sources */,
+				F2DF0DF229E3F5BB007886C2 /* SignUpPresenterProtocol.swift in Sources */,
+				F2EF70BD29E0B363003B5995 /* CatalogPresenter.swift in Sources */,
+				F2AE956329E1AA2400C1636D /* FavoriteTableViewCell.swift in Sources */,
+				F2D4DE9D29E2D891006ECCBA /* PasswordValidator.swift in Sources */,
+				F2AE955529E1948500C1636D /* DetailsViewController.swift in Sources */,
+				F2EF70A529E06E58003B5995 /* SingUpViewController.swift in Sources */,
+				F2EF70A129E061D8003B5995 /* AuthManager.swift in Sources */,
+				F2EF70BA29E0B222003B5995 /* MovieManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +807,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F2EF706E29E0593E003B5995 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F2EF706F29E0593E003B5995 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F2EF707329E05940003B5995 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -366,6 +868,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -420,6 +923,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -432,6 +936,7 @@
 		};
 		F2EF709029E05940003B5995 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F7D10C2A07283A5F8430F3E /* Pods-Voio.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -439,12 +944,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T73BLRAKR5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Voio/Info.plist;
+				INFOPLIST_FILE = Voio/Resources/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,14 +959,18 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Voio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		F2EF709129E05940003B5995 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 161C099047FFCFDEDB8CDD98 /* Pods-Voio.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -467,12 +978,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T73BLRAKR5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Voio/Info.plist;
+				INFOPLIST_FILE = Voio/Resources/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -480,14 +993,18 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Voio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		F2EF709329E05940003B5995 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B9A75C17C1AD9CEF914129B /* Pods-VoioTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +1025,7 @@
 		};
 		F2EF709429E05940003B5995 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9170AECEEC326D63B56E0819 /* Pods-VoioTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -528,6 +1046,7 @@
 		};
 		F2EF709629E05940003B5995 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3ED9A36D02917F68AD73FF8 /* Pods-Voio-VoioUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -546,6 +1065,7 @@
 		};
 		F2EF709729E05940003B5995 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75013E709E04912411B007A8 /* Pods-Voio-VoioUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -602,6 +1122,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F2AE956829E1DA6000C1636D /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
+		F2D4DEA729E33E0B006ECCBA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F2AE956929E1DA6100C1636D /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2AE956829E1DA6000C1636D /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		F2D4DEA829E33E0B006ECCBA /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2D4DEA729E33E0B006ECCBA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		F2D4DEAA29E33E0B006ECCBA /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2D4DEA729E33E0B006ECCBA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		F2D4DEAC29E33E0B006ECCBA /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2D4DEA729E33E0B006ECCBA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F2EF705D29E0593E003B5995 /* Project object */;
 }

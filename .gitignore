@@ -1,0 +1,64 @@
+Pods/Realm/core/realm-monorepo.xcframework/watchos-armv7k_arm64_32_arm64/librealm-monorepo.a
+Pods/Realm/core/realm-monorepo.xcframework/ios-arm64_armv7/librealm-monorepo.a
+Pods/Realm/core/realm-monorepo.xcframework/ios-arm64_x86_64_i386-simulator/librealm-monorepo.a
+Pods/Realm/core/realm-monorepo.xcframework/tvos-arm64_x86_64-simulator/librealm-monorepo.a
+Pods/Realm/core/realm-monorepo.xcframework/watchos-arm64_i386_x86_64-simulator/librealm-monorepo.a
+
+# Xcode
+#
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+DerivedData/
+.idea/
+
+# Swift Package Manager
+#
+.build/
+
+# Carthage
+#
+Carthage/Build/
+
+# CocoaPods
+#
+Pods/
+
+# Realm
+*.realm
+*.realm.lock
+*.realm.management
+*.realm.note
+
+# System
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Miscellaneous
+*.swp
+*.lock
+*.bak
+*.tmp
+*~.nib
+
+# User-specific
+*.user
+*.user.*
+
+# Sensitive data
+*.plist
+*.p12
+*.pem
+
+# OS X
+Icon
+.AppleDouble
+.DS_Store
