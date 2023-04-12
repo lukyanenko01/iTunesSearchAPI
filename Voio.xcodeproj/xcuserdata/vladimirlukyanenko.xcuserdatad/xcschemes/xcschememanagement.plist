@@ -28,7 +28,11 @@
 		<key>Voio.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+<<<<<<< Updated upstream
 			<integer>6</integer>
+=======
+			<integer>9</integer>
+>>>>>>> Stashed changes
 		</dict>
 	</dict>
 </dict>
